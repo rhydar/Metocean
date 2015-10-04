@@ -2,18 +2,18 @@
 % Please edit documentation in R/generatePivot.r
 \name{calcWavePower}
 \alias{calcWavePower}
-\title{A Cat Function}
+\title{A Metocean function}
 \usage{
 calcWavePower(Hs, Tp)
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{Hs}{- Significant wave height [m], Tp - Peak wave period}
 }
 \description{
-This function allows you to express your love of cats.
+This function calculates wave power based on Hs and Tp
 }
 \examples{
-cat_function()
+calcWavePower()
 }
-\keyword{cats}
+\keyword{Metocean}
 

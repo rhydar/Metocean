@@ -398,6 +398,14 @@ readWaveData <- function (myfolder,myfile,DateIndex,Hm0Index,TpIndex,MWDIndex) {
   #return (mywavedata)
   return (waveData)
 }
+#' A Metocean function
+#'
+#' This function reads in a Mike by DHI time series file, renames headers and brings into a DF
+#' @param File name text
+#' @keywords Metocean
+#' @export
+#' @examples
+#' readMikeDFS0()
 readMikeDFS0 <- function(data_file){
   library(zoo)
   ## TODO: Direct dfs0 connector for R.Net - Need to include long - lat in output

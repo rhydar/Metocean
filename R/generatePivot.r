@@ -194,7 +194,7 @@ plotScatter <- function(input_df,my_col_brew,col_index = c(2,3,4),...){
 #'
 #' This function calculates wave power based on Hs and Tp
 #' @param Hs - Significant wave height [m], Tp - Peak wave period
-#' @keywords
+#' @keywords Metocean
 #' @export
 #' @examples
 #' calcWavePower()

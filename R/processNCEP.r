@@ -27,7 +27,7 @@ plotWaveParam <- function(x,y,myylab,bottom="FALSE",...){
         plot(x,y,type="l",xaxt="n",yaxt="n",xlab = "", ylab = "",lwd=0.1)
         grid(col="dark grey",lty=2)
         par(new=T)
-        
+
         if (bottom == FALSE){
                 xlab = ""
                 plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.7)
@@ -51,10 +51,10 @@ combineData <- function(...){
         testHs <- readWaveParameter(hs_file,"Hs")
         testTp <- readWaveParameter(tp_file,"Tp")
         testDp <- readWaveParameter(dp_file,"Dp")
-        
+
         nww3Param <- testHs
         nww3Param$Tp <- testTp$Tp
-        nww3Param$Dp <- testDp$Dp   
+        nww3Param$Dp <- testDp$Dp
         return(nww3Param)
 }
 
@@ -72,16 +72,16 @@ plotSeasonalRose <- function(nww3Param,wave_params,breaks){
         require(openair)
         #oldNames <- names(nww3Param)
         #colnames(nww3Param) <- names
-        my.statistic <- list("fun"=length,"unit" = "%","scale" = "all", 
-            "lab" = "" , 
+        my.statistic <- list("fun"=length,"unit" = "%","scale" = "all",
+            "lab" = "" ,
             "fun2" = function(x) signif(mean(x, na.rm = TRUE), 3), "lab2" = "mean","labcalm" = function(x) round(x, 1))
         waveRose(mydata = nww3Param,
-                 ws = wave_params[1], 
-                 wd = wave_params[3], 
-                 angle = 5, 
+                 ws = wave_params[1],
+                 wd = wave_params[3],
+                 angle = 5,
                  type = "season",
                  hemisphere="southern",
-                 auto.text = FALSE, 
+                 auto.text = FALSE,
                  breaks = breaks,
                  key=TRUE,
                  key.header = expression(paste('H'[m0],' [m]')),
@@ -95,16 +95,24 @@ plotSeasonalRose <- function(nww3Param,wave_params,breaks){
                  )
 }
 
+#' A Metocean function
+#'
+#' This function reads in a Mike by DHI time series file, renames headers and brings into a DF
+#' @param File name text
+#' @keywords Metocean
+#' @export
+#' @examples
+#' plotAnnualWaveRose()
 plotAnnualWaveRose <- function(nww3Param,wave_params,breaks){
     require(openair)
-     my.statistic <- list("fun"=length,"unit" = "%","scale" = "all", 
-            "lab" = "" , 
+     my.statistic <- list("fun"=length,"unit" = "%","scale" = "all",
+            "lab" = "" ,
             "fun2" = function(x) signif(mean(x, dna.rm = TRUE), 3), "lab2" = "mean","labcalm" = function(x) round(x, 1))
         waveRose(mydata = nww3Param,
-                 ws = wave_params[1], 
-                 wd = wave_params[3], 
-                 angle = 10, 
-                 auto.text = FALSE, 
+                 ws = wave_params[1],
+                 wd = wave_params[3],
+                 angle = 10,
+                 auto.text = FALSE,
                  breaks = breaks,
                  key.header = expression(paste('H'[m0],' [m]')),
                  annotate = FALSE,
@@ -114,18 +122,18 @@ plotAnnualWaveRose <- function(nww3Param,wave_params,breaks){
                  par.settings=list(fontsize=list(text=12),mar=c(0,0,0,0)),
                  main="",
                  statistic=my.statistic
-                 )     
+                 )
 }
 
-waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int = 2, 
-                      angle = 30, type = "default", bias.corr = TRUE, cols = "default", 
-                      grid.line = NULL, width = 1, seg = NULL, auto.text = TRUE, 
-                      breaks = 4, offset = 10, max.freq = NULL, paddle = TRUE, 
-                      key.header = NULL, key.footer = "(m/s)", key.position = "bottom", 
-                      key = TRUE, dig.lab = 5, statistic = "prop.count", pollutant = NULL, 
-                      annotate = TRUE, border = NA, ...) 
+waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int = 2,
+                      angle = 30, type = "default", bias.corr = TRUE, cols = "default",
+                      grid.line = NULL, width = 1, seg = NULL, auto.text = TRUE,
+                      breaks = 4, offset = 10, max.freq = NULL, paddle = TRUE,
+                      key.header = NULL, key.footer = "(m/s)", key.position = "bottom",
+                      key = TRUE, dig.lab = 5, statistic = "prop.count", pollutant = NULL,
+                      annotate = TRUE, border = NA, ...)
                         {
-                        if (is.null(seg)) 
+                        if (is.null(seg))
                                 seg <- 0.9
                         if (length(cols) == 1 && cols == "greyscale") {
                                 trellis.par.set(list(strip.background = list(col = "white")))
@@ -137,33 +145,33 @@ waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int =
                         current.strip <- trellis.par.get("strip.background")
                         on.exit(trellis.par.set("strip.background", current.strip))
                         if (360/angle != round(360/angle)) {
-                                warning("In windRose(...):\n  angle will produce some spoke overlap", 
-                                        "\n  suggest one of: 5, 6, 8, 9, 10, 12, 15, 30, 45, etc.", 
+                                warning("In windRose(...):\n  angle will produce some spoke overlap",
+                                        "\n  suggest one of: 5, 6, 8, 9, 10, 12, 15, 30, 45, etc.",
                                         call. = FALSE)
                         }
                         if (angle < 3) {
-                                warning("In windRose(...):\n  angle too small", "\n  enforcing 'angle = 3'", 
+                                warning("In windRose(...):\n  angle too small", "\n  enforcing 'angle = 3'",
                                         call. = FALSE)
                                 angle <- 3
                         }
                         extra <- list(...)
-                        extra$xlab <- if ("xlab" %in% names(extra)) 
+                        extra$xlab <- if ("xlab" %in% names(extra))
                                 quickText(extra$xlab, auto.text)
                         else quickText("", auto.text)
-                        extra$ylab <- if ("ylab" %in% names(extra)) 
+                        extra$ylab <- if ("ylab" %in% names(extra))
                                 quickText(extra$ylab, auto.text)
                         else quickText("", auto.text)
-                        extra$main <- if ("main" %in% names(extra)) 
+                        extra$main <- if ("main" %in% names(extra))
                                 quickText(extra$main, auto.text)
                         else quickText("", auto.text)
                         rounded <- FALSE
-                        if (all(mydata[, wd]%%10 == 0, na.rm = TRUE)) 
+                        if (all(mydata[, wd]%%10 == 0, na.rm = TRUE))
                                 rounded <- TRUE
                         if (is.character(statistic)) {
-                                ok.stat <- c("prop.count", "prop.mean", "abs.count", 
+                                ok.stat <- c("prop.count", "prop.mean", "abs.count",
                                              "frequency")
                                 if (!is.character(statistic) || !statistic[1] %in% ok.stat) {
-                                        warning("In windRose(...):\n  statistic unrecognised", 
+                                        warning("In windRose(...):\n  statistic unrecognised",
                                                 "\n  enforcing statistic = 'prop.count'", call. = FALSE)
                                         statistic <- "prop.count"
                                 }
@@ -172,7 +180,7 @@ waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int =
                                         stat.unit <- "%"
                                         stat.scale <- "all"
                                         stat.lab <- "Frequency of counts by wave direction (%)"
-                                        stat.fun2 <- function(x) signif(mean(x, na.rm = TRUE), 
+                                        stat.fun2 <- function(x) signif(mean(x, na.rm = TRUE),
                                                                         3)
                                         stat.lab2 <- "mean"
                                         stat.labcalm <- function(x) round(x, 1)
@@ -182,7 +190,7 @@ waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int =
                                         stat.unit <- "%"
                                         stat.scale <- "panel"
                                         stat.lab <- "Proportion contribution to the mean (%)"
-                                        stat.fun2 <- function(x) signif(mean(x, na.rm = TRUE), 
+                                        stat.fun2 <- function(x) signif(mean(x, na.rm = TRUE),
                                                                         3)
                                         stat.lab2 <- "mean"
                                         stat.labcalm <- function(x) round(x, 1)
@@ -216,59 +224,59 @@ waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int =
                                 mydata$ws <- mydata[, ws2] - mydata[, ws]
                                 mydata$wd <- mydata[, wd2] - mydata[, wd]
                                 id <- which(mydata$wd < 0)
-                                if (length(id) > 0) 
+                                if (length(id) > 0)
                                         mydata$wd[id] <- mydata$wd[id] + 360
                                 pollutant <- "ws"
                                 key.footer <- "ws"
                                 wd <- "wd"
                                 ws <- "ws"
                                 vars <- c("ws", "wd")
-                                if (missing(angle)) 
+                                if (missing(angle))
                                         angle <- 10
-                                if (missing(offset)) 
+                                if (missing(offset))
                                         offset <- 20
                                 if (is.na(breaks[1])) {
-                                        max.br <- max(ceiling(abs(c(min(mydata$ws, na.rm = TRUE), 
+                                        max.br <- max(ceiling(abs(c(min(mydata$ws, na.rm = TRUE),
                                                                     max(mydata$ws, na.rm = TRUE)))))
                                         breaks <- c(-1 * max.br, 0, max.br)
                                 }
-                                if (missing(cols)) 
+                                if (missing(cols))
                                         cols <- c("lightskyblue", "tomato")
                                 seg <- 1
                         }
-                        if (any(type %in% openair:::dateTypes)) 
+                        if (any(type %in% openair:::dateTypes))
                                 vars <- c(vars, "date")
-                        if (!is.null(pollutant)) 
+                        if (!is.null(pollutant))
                                 vars <- c(vars, pollutant)
-                        mydata <- openair:::checkPrep(mydata, vars, type, remove.calm = FALSE, 
+                        mydata <- openair:::checkPrep(mydata, vars, type, remove.calm = FALSE,
                                             remove.neg = rm.neg)
                         mydata <- na.omit(mydata)
-                        if (is.null(pollutant)) 
+                        if (is.null(pollutant))
                                 pollutant <- ws
                         mydata$x <- mydata[, pollutant]
                         mydata[, wd] <- angle * ceiling(mydata[, wd]/angle - 0.5)
                         mydata[, wd][mydata[, wd] == 0] <- 360
                         mydata[, wd][mydata[, ws] == 0] <- -999
-                        if (length(breaks) == 1) 
+                        if (length(breaks) == 1)
                                 breaks <- 0:(breaks - 1) * ws.int
-                        if (max(breaks) < max(mydata$x, na.rm = TRUE)) 
+                        if (max(breaks) < max(mydata$x, na.rm = TRUE))
                                 breaks <- c(breaks, max(mydata$x, na.rm = TRUE))
-                        if (min(breaks) > min(mydata$x, na.rm = TRUE)) 
+                        if (min(breaks) > min(mydata$x, na.rm = TRUE))
                                 warning("Some values are below minimum break.")
                         breaks <- unique(breaks)
-                        mydata$x <- cut(mydata$x, breaks = breaks, include.lowest = FALSE, 
+                        mydata$x <- cut(mydata$x, breaks = breaks, include.lowest = FALSE,
                                         dig.lab = dig.lab)
                         labs <- gsub("[(]|[)]|[[]|[]]", "", levels(mydata$x))
                         labs <- gsub("[,]", " to ", labs)
                         prepare.grid <- function(mydata) {
-                                if (all(is.na(mydata$x))) 
+                                if (all(is.na(mydata$x)))
                                         return()
                                 levels(mydata$x) <- c(paste("x", 1:length(labs), sep = ""))
                                 all <- stat.fun(mydata[, wd])
                                 calm <- mydata[mydata[, wd] == -999, ][, pollutant]
                                 mydata <- mydata[mydata[, wd] != -999, ]
                                 calm <- stat.fun(calm)
-                                weights <- tapply(mydata[, pollutant], list(mydata[, 
+                                weights <- tapply(mydata[, pollutant], list(mydata[,
                                                                                    wd], mydata$x), stat.fun)
                                 freqs <- tapply(mydata[, pollutant], mydata[, wd], length)
                                 if (stat.scale == "all") {
@@ -294,18 +302,18 @@ waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int =
                                         mean.wd <- NA
                                 }
                                 else {
-                                        if (mean.wd < 0) 
+                                        if (mean.wd < 0)
                                                 mean.wd <- mean.wd + 360
-                                        if (mean.wd > 180) 
+                                        if (mean.wd > 180)
                                                 mean.wd <- mean.wd - 360
                                 }
-                                weights <- cbind(data.frame(weights), wd = as.numeric(row.names(weights)), 
-                                                 calm = calm, panel.fun = panel.fun, mean.wd = mean.wd, 
+                                weights <- cbind(data.frame(weights), wd = as.numeric(row.names(weights)),
+                                                 calm = calm, panel.fun = panel.fun, mean.wd = mean.wd,
                                                  freqs = freqs)
                                 weights
                         }
                         if (paddle) {
-                                poly <- function(wd, len1, len2, width, colour, x.off = 0, 
+                                poly <- function(wd, len1, len2, width, colour, x.off = 0,
                                                  y.off = 0) {
                                         theta <- wd * pi/180
                                         len1 <- len1 + off.set
@@ -318,16 +326,16 @@ waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int =
                                         y2 <- len1 * cos(theta) - width * sin(theta) + y.off
                                         y3 <- len2 * cos(theta) + width * sin(theta) + y.off
                                         y4 <- len2 * cos(theta) - width * sin(theta) + y.off
-                                        lpolygon(c(x1, x2, x4, x3), c(y1, y2, y4, y3), col = colour, 
+                                        lpolygon(c(x1, x2, x4, x3), c(y1, y2, y4, y3), col = colour,
                                                  border = border)
                                 }
                         }
                         else {
-                                poly <- function(wd, len1, len2, width, colour, x.off = 0, 
+                                poly <- function(wd, len1, len2, width, colour, x.off = 0,
                                                  y.off = 0) {
                                         len1 <- len1 + off.set
                                         len2 <- len2 + off.set
-                                        theta <- seq((wd - seg * angle/2), (wd + seg * angle/2), 
+                                        theta <- seq((wd - seg * angle/2), (wd + seg * angle/2),
                                                      length.out = (angle - 2) * 10)
                                         theta <- ifelse(theta < 1, 360 - theta, theta)
                                         theta <- theta * pi/180
@@ -346,7 +354,7 @@ waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int =
                                 wd <- seq(10, 360, 10)
                                 tmp <- angle * ceiling(wd/angle - 0.5)
                                 id <- which(tmp == 0)
-                                if (length(id > 0)) 
+                                if (length(id > 0))
                                         tmp[id] <- 360
                                 tmp <- table(tmp)
                                 vars <- grep("x", names(results.grid))
@@ -363,7 +371,7 @@ waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int =
                                 col <- openColours(cols, length(labs))
                         }
                         if (is.null(max.freq)) {
-                                max.freq <- max(results.grid[, (length(type) + 1):(length(labs) + 
+                                max.freq <- max(results.grid[, (length(type) + 1):(length(labs) +
                                                                                            length(type))], na.rm = TRUE)
                         }
                         else {
@@ -372,29 +380,29 @@ waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int =
                         off.set <- max.freq * (offset/100)
                         box.widths <- seq(0.002^0.25, 0.016^0.25, length.out = length(labs))^4
                         box.widths <- box.widths * max.freq * angle/5
-                        legend <- list(col = col, space = key.position, auto.text = auto.text, 
-                                       labels = labs, footer = key.footer, header = key.header, 
+                        legend <- list(col = col, space = key.position, auto.text = auto.text,
+                                       labels = labs, footer = key.footer, header = key.header,
                                        height = 0.6, width = 1.5, fit = "scale", plot.style = if (paddle) "paddle" else "other")
                         legend <- openair:::makeOpenKeyLegend(key, legend, "windRose")
                         temp <- paste(type, collapse = "+")
                         myform <- formula(paste("x1 ~ wd | ", temp, sep = ""))
                         mymax <- 2 * max.freq
-                        myby <- if (is.null(grid.line)) 
+                        myby <- if (is.null(grid.line))
                                 pretty(c(0, mymax), 10)[2]
                         else grid.line
-                        if (myby/mymax > 0.9) 
+                        if (myby/mymax > 0.9)
                                 myby <- mymax * 0.9
-                        xyplot.args <- list(x = myform, xlim = 1.03 * c(-max.freq - 
-                                                                                off.set, max.freq + off.set), ylim = 1.03 * c(-max.freq - 
-                                                                                                                                      off.set, max.freq + off.set), data = results.grid, type = "n", 
-                                            sub = stat.lab, strip = strip, strip.left = strip.left, 
-                                            as.table = TRUE, aspect = 1, par.strip.text = list(cex = 0.8), 
-                                            scales = list(draw = FALSE), panel = function(x, y, subscripts, 
+                        xyplot.args <- list(x = myform, xlim = 1.03 * c(-max.freq -
+                                                                                off.set, max.freq + off.set), ylim = 1.03 * c(-max.freq -
+                                                                                                                                      off.set, max.freq + off.set), data = results.grid, type = "n",
+                                            sub = stat.lab, strip = strip, strip.left = strip.left,
+                                            as.table = TRUE, aspect = 1, par.strip.text = list(cex = 0.8),
+                                            scales = list(draw = FALSE), panel = function(x, y, subscripts,
                                                                                           ...) {
                                                     panel.xyplot(x, y, ...)
                                                     angles <- seq(0, 2 * pi, length = 360)
-                                                    sapply(seq(off.set, mymax, by = myby), function(x) llines(x * 
-                                                                                                                      sin(angles), x * cos(angles), col = "grey85", 
+                                                    sapply(seq(off.set, mymax, by = myby), function(x) llines(x *
+                                                                                                                      sin(angles), x * cos(angles), col = "grey85",
                                                                                                               lwd = 1))
                                                     dat <- results.grid[subscripts, ]
                                                     upper <- max.freq + off.set
@@ -408,35 +416,35 @@ waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int =
                                                             dat$x0 <- 0
                                                             for (i in 1:nrow(dat)) {
                                                                     for (j in seq_along(labs)) {
-                                                                            tmp <- paste("poly(dat$wd[i], dat$x", j - 
-                                                                                                 1, "[i], dat$x", j, "[i], width * box.widths[", 
+                                                                            tmp <- paste("poly(dat$wd[i], dat$x", j -
+                                                                                                 1, "[i], dat$x", j, "[i], width * box.widths[",
                                                                                          j, "], col[", j, "])", sep = "")
                                                                             eval(parse(text = tmp))
                                                                     }
                                                             }
                                                     }
-                                                    ltext(seq((myby + off.set), mymax, myby) * sin(pi/4), 
-                                                          seq((myby + off.set), mymax, myby) * cos(pi/4), 
-                                                          paste(seq(myby, mymax, by = myby), stat.unit, 
+                                                    ltext(seq((myby + off.set), mymax, myby) * sin(pi/4),
+                                                          seq((myby + off.set), mymax, myby) * cos(pi/4),
+                                                          paste(seq(myby, mymax, by = myby), stat.unit,
                                                                 sep = ""), cex = 0.7)
                                                     if (annotate) if (statistic != "prop.mean") {
                                                             if (!diff) {
-                                                                    ltext(max.freq + off.set, -max.freq - off.set, 
-                                                                          label = paste(stat.lab2, " = ", dat$panel.fun[1], 
-                                                                                        "\ncalm = ", dat$calm[1], stat.unit, sep = ""), 
+                                                                    ltext(max.freq + off.set, -max.freq - off.set,
+                                                                          label = paste(stat.lab2, " = ", dat$panel.fun[1],
+                                                                                        "\ncalm = ", dat$calm[1], stat.unit, sep = ""),
                                                                           adj = c(1, 0), cex = 0.7, col = calm.col)
                                                             }
                                                             if (diff) {
-                                                                    ltext(max.freq + off.set, -max.freq - off.set, 
-                                                                          label = paste("mean ws = ", round(dat$panel.fun[1], 
-                                                                                                            1), "\nmean wd = ", round(dat$mean.wd[1], 
-                                                                                                                                      1), sep = ""), adj = c(1, 0), cex = 0.7, 
+                                                                    ltext(max.freq + off.set, -max.freq - off.set,
+                                                                          label = paste("mean ws = ", round(dat$panel.fun[1],
+                                                                                                            1), "\nmean wd = ", round(dat$mean.wd[1],
+                                                                                                                                      1), sep = ""), adj = c(1, 0), cex = 0.7,
                                                                           col = calm.col)
                                                             }
                                                     } else {
-                                                            ltext(max.freq + off.set, -max.freq - off.set, 
-                                                                  label = paste(stat.lab2, " = ", dat$panel.fun[1], 
-                                                                                stat.unit, sep = ""), adj = c(1, 0), cex = 0.7, 
+                                                            ltext(max.freq + off.set, -max.freq - off.set,
+                                                                  label = paste(stat.lab2, " = ", dat$panel.fun[1],
+                                                                                stat.unit, sep = ""), adj = c(1, 0), cex = 0.7,
                                                                   col = calm.col)
                                                     }
                                             }, legend = legend)

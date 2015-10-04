@@ -104,8 +104,11 @@ plotSeasonalRose <- function(nww3Param,wave_params,breaks){
 #' @examples
 #' plotAnnualWaveRose()
 plotAnnualWaveRose <- function(nww3Param,wave_params,breaks){
-    require(openair)
+    require(xts)
     require(lattice)
+    require(plyr)
+    require(openair)
+    require(dplyr)
      my.statistic <- list("fun"=length,"unit" = "%","scale" = "all",
             "lab" = "" ,
             "fun2" = function(x) signif(mean(x, dna.rm = TRUE), 3), "lab2" = "mean","labcalm" = function(x) round(x, 1))

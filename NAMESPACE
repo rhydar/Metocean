@@ -3,3 +3,4 @@
 export(calcWavePower)
 export(plotAnnualWaveRose)
 export(readMikeDFS0)
+export(waveRose)

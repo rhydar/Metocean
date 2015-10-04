@@ -67,9 +67,20 @@ plotWaveParams <- function(nww3Param,wave_parameters){
         plotWaveParam(nww3Param$date,nww3Param[[wave_parameters[3]]], myylab = "Wave direction [deg TN]",bottom="TRUE")
         par(op)
 }
-
+#' A Metocean function
+#'
+#' This function reads in a Mike by DHI time series file, renames headers and brings into a DF
+#' @param File name text
+#' @keywords Metocean
+#' @export
+#' @examples
+#' plotSeasonalRose()
 plotSeasonalRose <- function(nww3Param,wave_params,breaks){
+        require(xts)
+        require(lattice)
+        require(plyr)
         require(openair)
+        require(dplyr)
         #oldNames <- names(nww3Param)
         #colnames(nww3Param) <- names
         my.statistic <- list("fun"=length,"unit" = "%","scale" = "all",

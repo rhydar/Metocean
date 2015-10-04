@@ -124,7 +124,14 @@ plotAnnualWaveRose <- function(nww3Param,wave_params,breaks){
                  statistic=my.statistic
                  )
 }
-
+#' A Metocean function
+#'
+#' This function reads in a Mike by DHI time series file, renames headers and brings into a DF
+#' @param File name text
+#' @keywords Metocean
+#' @export
+#' @examples
+#' waveRose()
 waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int = 2,
                       angle = 30, type = "default", bias.corr = TRUE, cols = "default",
                       grid.line = NULL, width = 1, seg = NULL, auto.text = TRUE,

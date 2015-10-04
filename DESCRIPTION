@@ -1,0 +1,10 @@
+Package: Metocean
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1
+Date: 2015-10-02
+Author: Rhydar Harris
+Maintainer: <email.rhydar@gmail.com>
+Description: Series of functions to process metocean data for rapid usage. 
+License: What license is it under?
+LazyData: TRUE

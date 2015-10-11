@@ -168,7 +168,7 @@ getBinnedData <- function(input_df,binning_vect,binning_var){
 #' @param Dataframe of time series of wave data
 #' @return Returns and plot object
 #' @keywords scatter, waves, processing
-#' @export 
+#' @export
 #' @examples
 #' plotScatter(input_df)
 plotScatter <- function(input_df,my_col_brew,col_index = c(2,3,4),...){
@@ -195,8 +195,6 @@ plotScatter <- function(input_df,my_col_brew,col_index = c(2,3,4),...){
   scatterPlot(input_df,x=Hs,y=Dp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)
   scatterPlot(input_df,x=Tp,y=Dp,method = "hexbin",xbins=100,cols = "jet",aspect=1,hemisphere="southern")#,type="season")
 
-  #par(olpdar)
-  return()
 }
 
 

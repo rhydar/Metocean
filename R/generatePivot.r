@@ -161,6 +161,16 @@ getBinnedData <- function(input_df,binning_vect,binning_var){
   return(return_df)
 }
 
+
+#' Function to generate scatter plots for wave data
+#'
+#' Plots scatter diagrams for wave parameters of specified
+#' @param Dataframe of time series of wave data
+#' @return Returns and plot object
+#' @keywords scatter, waves, processing
+#' @export 
+#' @examples
+#' plotScatter(input_df)
 plotScatter <- function(input_df,my_col_brew,col_index = c(2,3,4),...){
   # # Description ==============================================================
   # Author:      Rhydar Lee Harris

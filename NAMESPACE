@@ -2,6 +2,7 @@
 
 export(calcWavePower)
 export(plotAnnualWaveRose)
+export(plotScatter)
 export(plotSeasonalRose)
 export(readMikeDFS0)
 export(waveRose)

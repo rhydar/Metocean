@@ -190,11 +190,19 @@ plotScatter <- function(input_df,my_col_brew,col_index = c(2,3,4),...){
   Tp <- "Tp_interpolated"
   Dp <- "Dir_mean_at_Tp"
 
-  scatterPlot(input_df,x=Hs,y=Tp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)#,type="season")
+  a <- scatterPlot(input_df,x=Hs,y=Tp,z = Dp,
+                               method = "level",xbins=100,
+                               hemisphere="southern",
+                   cols = "jet",
+                   aspect=1,
+                   key=FALSE,
+                   key.title = "What",hexbin=FALSE,silent=TRUE)
+  b <- scatterPlot(input_df,x=Hs,y=Dp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)
+  c <-scatterPlot(input_df,x=Dp,y=Tp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)
 
-  scatterPlot(input_df,x=Hs,y=Dp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)
-  scatterPlot(input_df,x=Tp,y=Dp,method = "hexbin",xbins=100,cols = "jet",aspect=1,hemisphere="southern")#,type="season")
+  plots <- list("a" = a,"b" = b,"c" = c)
 
+  return(plots)
 }
 
 
@@ -220,15 +228,5 @@ calcWavePower <- function(Hs,Tp){
   P <- 0.5 * Hs * Hs * Tp
   return(P)
 }
-#plotScatter(input_df = nww3Param)
 
-#nww3Param <- cbind(nww3Param,P = calcWavePower(nww3Param$Hs,nww3Param$Tp))
-
-#hs_bins <- seq(0,9,by=0.5)
-#tp_bins <- seq(0,22,by=1)
-
-#nww3Param <- cbind(nww3Param,hs_bins = cut(nww3Param$Hs,breaks = hs_bins))
-#nww3Param <- cbind(nww3Param,tp_bins = cut(nww3Param$Tp,breaks = tp_bins))
-
-#pivot_table <- dcast(nww3Param,hs_bins ~ tp_bins)
 

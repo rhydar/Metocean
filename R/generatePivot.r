@@ -190,19 +190,26 @@ plotScatter <- function(input_df,my_col_brew,col_index = c(2,3,4),...){
   Tp <- "Tp_interpolated"
   Dp <- "Dir_mean_at_Tp"
 
-  a <- scatterPlot(input_df,x=Hs,y=Tp,z = Dp,
-                               method = "level",xbins=100,
+  a <- scatterPlot(input_df,x=Hs,y=Tp,
+                               method = "hexbin",xbins=100,
                                hemisphere="southern",
                    cols = "jet",
                    aspect=1,
                    key=FALSE,
-                   key.title = "What",hexbin=FALSE,silent=TRUE)
+                   key.title = "What",hexbin=FALSE,silent=TRUE,hexbinplot.colorkey = 0)
   b <- scatterPlot(input_df,x=Hs,y=Dp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)
   c <-scatterPlot(input_df,x=Dp,y=Tp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)
 
   plots <- list("a" = a,"b" = b,"c" = c)
 
   return(plots)
+}
+
+fix_scatter <- function(oa_obj,xlab,ylab){
+    oa_obj$plot$xlab <- xlab
+    oa_obj$plot$ylab <- ylab
+    #oa_obj$
+    return(oa_obj)
 }
 
 

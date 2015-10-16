@@ -171,7 +171,7 @@ getBinnedData <- function(input_df,binning_vect,binning_var){
 #' @export
 #' @examples
 #' plotScatter(input_df)
-plotScatter <- function(input_df,my_col_brew,col_index = c(2,3,4),col_hm0,col_tp,col_dir,...){
+plotScatter <- function(input_df,my_col_brew,col_index = c(2,3,4),col_hmo,col_tp,col_dir,...){
   # # Description ==============================================================
   # Author:      Rhydar Lee Harris
   # Date:        2015-03-28 T20:38:24Z

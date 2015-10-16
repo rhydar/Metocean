@@ -171,7 +171,7 @@ getBinnedData <- function(input_df,binning_vect,binning_var){
 #' @export
 #' @examples
 #' plotScatter(input_df)
-plotScatter <- function(input_df,my_col_brew,col_index = c(2,3,4),...){
+plotScatter <- function(input_df,my_col_brew,col_index = c(2,3,4),col_hm0,col_tp,col_dir...){
   # # Description ==============================================================
   # Author:      Rhydar Lee Harris
   # Date:        2015-03-28 T20:38:24Z
@@ -196,9 +196,15 @@ plotScatter <- function(input_df,my_col_brew,col_index = c(2,3,4),...){
                    cols = "jet",
                    aspect=1,
                    key=FALSE,
-                   key.title = "What",hexbin=FALSE,silent=TRUE,hexbinplot.colorkey = 0)
-  b <- scatterPlot(input_df,x=Hs,y=Dp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)
-  c <-scatterPlot(input_df,x=Dp,y=Tp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)
+                   key.title = "What",hexbin=FALSE,silent=TRUE,hexbinplot.colorkey = 0,
+                   ref.x = list(v = c(col_hmo),col="dark gray",lwd=3),
+                   ref.y = list(h = c(col_tp),col="dark gray",lwd=3))
+  b <- scatterPlot(input_df,x=Hs,y=Dp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1,
+                   ref.x = list(v = c(col_hmo),col="dark gray",lwd=3),
+                   ref.y = list(h = c(col_dir),col="dark gray",lwd=3))
+  c <-scatterPlot(input_df,x=Dp,y=Tp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1,
+                  ref.x = list(v = c(col_dir),col="dark gray",lwd=3),
+                  ref.y = list(h = c(col_tp),col="dark gray",lwd=3))
 
   plots <- list("a" = a,"b" = b,"c" = c)
 

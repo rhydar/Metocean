@@ -4,7 +4,8 @@
 \alias{plotScatter}
 \title{Function to generate scatter plots for wave data}
 \usage{
-plotScatter(input_df, my_col_brew, col_index = c(2, 3, 4), ...)
+plotScatter(input_df, my_col_brew, col_index = c(2, 3, 4), col_hmo, col_tp,
+  col_dir, ...)
 }
 \arguments{
 \item{Dataframe}{of time series of wave data}

@@ -48,7 +48,6 @@ readMikeDFS0 <- function(data_file){
 #' @param type string 'monthly' 'season'
 #' @param hemisphere southern or northern
 #' @return dataframe of exceedances
-#' @keywords 
 #' @export 
 #' @examples 
 #' getExceedance() 

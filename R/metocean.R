@@ -4,12 +4,12 @@
 
 #' Function to read Mike by DHI text file into a data frame
 #'
-#' 
+#'
 #' @param data_file ascii file with time series of metocean data
 #' @return data_frame
 #' @keywords metocean
-#' @export 
-#' @examples 
+#' @export
+#' @examples
 #' readMikeDFS0()
 readMikeDFS0 <- function(data_file){
   library(zoo)
@@ -40,7 +40,7 @@ readMikeDFS0 <- function(data_file){
 
 #' Function to calculate exceedance plots and tables
 #'
-#' 
+#'
 #' @param df time series of metocean data
 #' @param variable index of variable for plotting
 #' @param percentiles list of percentiles between 0 and 1
@@ -48,9 +48,9 @@ readMikeDFS0 <- function(data_file){
 #' @param type string 'monthly' 'season'
 #' @param hemisphere southern or northern
 #' @return dataframe of exceedances
-#' @export 
-#' @examples 
-#' getExceedance() 
+#' @export
+#' @examples
+#' getExceedance()
 getExceedance <- function(df,variable,
  	percentiles = c(c(0,0.01,0.02,0.05),seq(0.1,0.9,0.1),c(0.95,0.98,0.99,1)),
  	xlabel, type = "season", hemisphere = "northern"){
@@ -69,11 +69,11 @@ getExceedance <- function(df,variable,
         }
         return (my_season)
 	}
-	# Helper function to get a subset of of the month 
+	# Helper function to get a subset of of the month
 	getMonthlyData <- function(df,month){
         data_results <- df[which(month(ymd_hms(df[[1]]),label = TRUE) %in% month),]
         return(data_results)
 	}
-	# 
+	#
     return()
 }

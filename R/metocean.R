@@ -75,5 +75,6 @@ getExceedance <- function(df,variable,
         return(data_results)
 	}
 	#
-    return()
+    tmp <- quantile(df)
+    return("This")
 }

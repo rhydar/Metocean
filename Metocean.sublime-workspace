@@ -1,0 +1,663 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"xml",
+				"xml_file"
+			],
+			[
+				"get",
+				"getroot	function"
+			],
+			[
+				"pack",
+				"packageR	packageNamespaceR"
+			],
+			[
+				"pac",
+				"packageR	packageNamespaceR"
+			],
+			[
+				"L",
+				"Line2D"
+			],
+			[
+				"l",
+				"lines"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"re",
+				"recurse_dir"
+			],
+			[
+				"df",
+				"df2sqlite	function"
+			],
+			[
+				"li",
+				"listdir	function"
+			],
+			[
+				"list",
+				"listdir"
+			],
+			[
+				"177K",
+				"177KFSRU_20125LNGC_80"
+			],
+			[
+				"lis",
+				"listdir"
+			],
+			[
+				"PO",
+				"PROJECT_BACKUP"
+			],
+			[
+				"Mean",
+				"Mean_third_pos"
+			],
+			[
+				"mo",
+				"motions"
+			],
+			[
+				"mx",
+				"mxNeg3	statement"
+			],
+			[
+				"mxN",
+				"mxNeg2	statement"
+			],
+			[
+				"m3",
+				"m3neg	statement"
+			],
+			[
+				"f",
+				"fetchall"
+			],
+			[
+				"P",
+				"Python"
+			],
+			[
+				"S",
+				"Scripts"
+			],
+			[
+				"exp",
+				"expression"
+			],
+			[
+				"arr",
+				"arrayOfArrays"
+			],
+			[
+				"line",
+				"line"
+			],
+			[
+				"rea",
+				"read_input_file"
+			],
+			[
+				"input",
+				"input_file"
+			],
+			[
+				"leng",
+				"lengths"
+			],
+			[
+				"len",
+				"lengths"
+			],
+			[
+				"vol",
+				"volume"
+			],
+			[
+				"draft",
+				"drafts"
+			],
+			[
+				"le",
+				"lengths"
+			],
+			[
+				"t",
+				"tide"
+			],
+			[
+				"pr",
+				"predicted"
+			],
+			[
+				"sp",
+				"springs"
+			],
+			[
+				"or",
+				"org"
+			],
+			[
+				"a",
+				"’auto-mode-alist"
+			],
+			[
+				"org",
+				"org-mode"
+			],
+			[
+				"fr",
+				"frame	Beamer frame"
+			],
+			[
+				"da",
+				"data"
+			],
+			[
+				"E",
+				"EVA"
+			],
+			[
+				"return",
+				"return"
+			],
+			[
+				"zco",
+				"zcoord"
+			],
+			[
+				"coo",
+				"coords"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"proj",
+				"projString"
+			],
+			[
+				"yc",
+				"ycoord"
+			],
+			[
+				"xco",
+				"xcoord"
+			],
+			[
+				"libra",
+				"library"
+			],
+			[
+				"Cal",
+				"CalculateVerticalTension"
+			],
+			[
+				"CT",
+				"CT66"
+			],
+			[
+				"C",
+				"CircStats"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Primary Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Choose Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Clean up Files"
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/knitr/knitr-Markdown.sublime-build",
+					""
+				],
+				[
+					"Packages/knitr/knitr-Markdown.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/knitr/knitr-Markdown.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "repl",
+		"selected_items":
+		[
+			[
+				"repl",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"note",
+				"Snippet: Model tests"
+			],
+			[
+				"repl ip",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"repl I",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Add Repository"
+			],
+			[
+				"Package Control: Install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: figure"
+			],
+			[
+				"Snippet: Bibtex ",
+				"Snippet: BibTeX Misc"
+			],
+			[
+				"Snippet: Bibtex 	",
+				"Snippet: BibTeX Article"
+			],
+			[
+				"Package Control: In",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 484.0
+	},
+	"console":
+	{
+		"height": 360.0,
+		"history":
+		[
+			"Open IPython Notebook",
+			"exit()",
+			"exi",
+			"REPL",
+			"REPL R",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/rhydarharris/Dropbox/Scripts/Python/DVRS/readXml.py",
+		"/Users/rhydarharris/Desktop/bluewhale1444982483400/Tutorial1_2016/Tutorial1_2016/DVRS/DVRS_Tutorial1.dvrsf",
+		"/usr/local/texlive/2015/release-texlive.txt",
+		"/Users/rhydarharris/Desktop/test.R",
+		"/Users/rhydarharris/Dropbox/Scripts/R/RPackages/Metocean/R/generatePivot.r",
+		"/Users/rhydarharris/Library/Application Support/Sublime Text 3/Packages/User/generateScriptR.sublime-snippet",
+		"/Users/rhydarharris/Library/Application Support/Sublime Text 3/Packages/User/generateSimpleFunctionR.sublime-snippet",
+		"/Users/rhydarharris/Library/Application Support/Sublime Text 3/Packages/User/commentR.sublime-snippet",
+		"/Users/rhydarharris/Library/Application Support/Sublime Text 3/Packages/User/packageNamespaceR.sublime-snippet",
+		"/Users/rhydarharris/Dropbox/Final Conference Docs/README.txt",
+		"/Volumes/F/PROJECT_BACKUP/SA (S2018) LNG Medium Term IPP/01_Data/Layout/Saldanha 01/DRIFT/177KFSRU_20125LNGC_80/C/002/DRFT.dat",
+		"/Volumes/F/PROJECT_BACKUP/SA (S2018) LNG Medium Term IPP/01_Data/Layout/Saldanha 01/DRIFT/177KFSRU_20125LNGC_80/B/002/DRFT.dat",
+		"/Volumes/F/PROJECT_BACKUP/SA (S2018) LNG Medium Term IPP/01_Data/Layout/Saldanha 01/DRIFT/177KFSRU_20125LNGC_80/A/002/DRFT.dat",
+		"/Users/rhydarharris/Dropbox/Scripts/Python/aqwa_process_drift_lis.py",
+		"/Users/rhydarharris/Dropbox/Scripts/SQL/CreateTables.sql",
+		"/Volumes/F/PROJECT_BACKUP/SA (S2020) Power Barge IPP/PostProcess/Wave_Timeseries_Mean.txt",
+		"/Volumes/F/PROJECT_BACKUP/SA (S2020) Power Barge IPP/PostProcess/Coega_S4_Waves_19.5mCD.txt",
+		"/Users/rhydarharris/Dropbox/Scripts/R/RPackages/Metocean/DESCRIPTION",
+		"/Users/rhydarharris/Dropbox/Scripts/Python/AQWA/read_ts_to_pickle.py",
+		"/Users/rhydarharris/Dropbox/Scripts/Python/AQWA/aqwa_euler.py",
+		"/Users/rhydarharris/Dropbox/analyze_lis.py",
+		"/Users/rhydarharris/Library/Application Support/Sublime Text 3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
+		"/Users/rhydarharris/Library/Application Support/Sublime Text 3/Packages/IPython Notebook/README.md",
+		"/Volumes/F/PROJECT_BACKUP/SA (S2018) LNG Medium Term IPP/01_Data/Metocean/CSIR_Wind_Processing.rmd",
+		"/Users/rhydarharris/Dropbox/MEng/Thesis/Report/Sections/Conclusions.Rnw",
+		"/Users/rhydarharris/Dropbox/MEng/Thesis/Report/Main/RLH_MEng_Project.Rnw",
+		"/Users/rhydarharris/Dropbox/MEng/Thesis/Report/BackMatter/Bibliography.bib",
+		"/Volumes/F/S2009/01_Data/Layout/05/Report/Main/Layout05.Rnw",
+		"/Users/rhydarharris/Dropbox/MEng/Thesis/Report/Tables/summaryTab.tex",
+		"/Users/rhydarharris/Library/Application Support/Sublime Text 3/Packages/User/LaTeXing.sublime-settings",
+		"/Volumes/F/PROJECT_BACKUP/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/Draft-2014-05-26X4/Tables/predicted.tide.tex",
+		"/Users/rhydarharris/Dropbox/MEng/Thesis/Report/Sections/test2.tex",
+		"/Users/rhydarharris/Dropbox/MEng/Thesis/Report/Sections/test2.Rnw",
+		"/Users/rhydarharris/Library/Application Support/Sublime Text 3/Packages/R-Box/R-Box.sublime-settings",
+		"/Users/rhydarharris/Library/Application Support/Sublime Text 3/Packages/User/R-Box.sublime-settings",
+		"/Users/rhydarharris/Dropbox/MEng/Thesis/Data/Wave/NCEP/processed/test.png",
+		"/Users/rhydarharris/Dropbox/MEng/Thesis/ProjectPlanning/Plan/Project Status.html",
+		"/Users/rhydarharris/Dropbox/MEng/Thesis/Report/Sections/Introduction.Rnw",
+		"/F/S2009/Notes/LiteratureStudy.bib",
+		"/Users/rhydarharris/Dropbox/MEng/Thesis/Report/Main/RLH_MEng_Project.tex",
+		"/C/Users/rlh.PRDW/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/F/S2009/Notes/Notes.txt",
+		"/F/S2009/Notes/C2001_NOTES.Rnw",
+		"/Users/rhydarharris/Dropbox/MEng/Thesis/Report/Sections/LiteratureStudy.Rnw",
+		"/Users/rhydarharris/Dropbox/MEng/Thesis/Report/Main/Main.Rnw",
+		"/Users/rhydarharris/.qgis2/python/plugins/numericalVertexEdit/__init__.py",
+		"/Users/rhydarharris/.qgis2/python/plugins/numericalVertexEdit/numericalvertexedit.py",
+		"/Users/rhydarharris/.qgis2/python/plugins/numericalVertexEdit/resources.py",
+		"/Users/rhydarharris/.qgis2/python/plugins/numericalVertexEdit/vertexfindertool.py",
+		"/Users/rhydarharris/.qgis2/python/plugins/cadtools/cadtoolsaboutgui.py",
+		"/Users/rhydarharris/Dropbox/Module1.bas",
+		"/Users/rhydarharris/Dropbox/RunPy.bat",
+		"/Users/rhydarharris/Desktop/01 Project Admin/Source/Python/01.py",
+		"/Users/rhydarharris/Dropbox/grib_data/etc/AQWA_HYDRO_LINE_EXAMPLE.txt",
+		"/Users/rhydarharris/Dropbox/grib_data/bin/http_server.py",
+		"/Users/rhydarharris/Dropbox/grib_data/lib/python/grib.py",
+		"/Users/rhydarharris/Documents/Coursera/R-Programming/Assignment/Assignment 03/Calculations/hospital-data.csv",
+		"/Users/rhydarharris/Documents/Python/mass_spring.py",
+		"/Users/rhydarharris/Dropbox/Scripts/Python/testclass.py",
+		"/Users/rhydarharris/Dropbox/Scripts/Python/solver.py",
+		"/Users/rhydarharris/Dropbox/Scripts/Python/bumpy.py",
+		"/Users/rhydarharris/Dropbox/MEng/Thesis/Research Proposal/proposal.tex",
+		"/Users/rhydarharris/Downloads/IHFOAM_materials/reference/sampling/postSensPres.py",
+		"/Users/rhydarharris/Documents/M.Eng/Admin/Project Maintenance/TaskJuggler/tutorial.tjp",
+		"/Users/rhydarharris/Dropbox/Org/admin.folder.structure.tex",
+		"/Users/rhydarharris/Dropbox/Scripts/Python/admin.folder.structure.py",
+		"/Users/rhydarharris/Documents/Coursera/Data Scientist Toolbox/Assignment/HelloWorld.md",
+		"/Users/rhydarharris/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Volumes/__RHYDAR-PROLI_Users/Rhydar/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Volumes/PRDW_RLH01/Model_Tests/Test.Rnw",
+		"/Volumes/PRDW_RLH01/Model_Tests/prdw_calculations_sheet.cls",
+		"/Users/rhydarharris/Dropbox/New folder/processPTA.pl",
+		"/Volumes/PRDW_RLH01/Model_Tests/CM_DRFT_001_MOTIONS.dat",
+		"/Volumes/PRDW_RLH01/Model_Tests/AQWA001.PTA",
+		"/Volumes/PRDW_RLH01/AQWA/ANSYS AQWA/AQWA Intro/Input-Files/stinger.dat",
+		"/Volumes/PRDW_RLH01/AQWA/ANSYS AQWA/AQWA Intro/Input-Files/tanker3.DAT",
+		"/Volumes/PRDW_RLH01/AQWA/ANSYS AQWA/AQWA Intro/Input-Files/ShipFrequency2.DAT",
+		"/Volumes/PRDW_RLH01/AQWA/ANSYS AQWA/AQWA Intro/Input-Files/TwoTankDrift.DAT",
+		"/Volumes/PRDW_RLH01/AQWA/ANSYS AQWA/AQWA Intro/Input-Files/ShipLibrium2.DAT",
+		"/Volumes/PRDW_RLH01/AQWA/ANSYS AQWA/AQWA Intro/Input-Files/ShipDrift2.DAT",
+		"/Volumes/PRDW_RLH01/AQWA/ANSYS AQWA/AQWA Intro/Input-Files/ShipLibrium.dat",
+		"/Volumes/PRDW_RLH01/AQWA/ANSYS AQWA/AQWA Intro/Input-Files/HydiTanker.DAT",
+		"/Users/rhydarharris/Dropbox/RunGenerateMooring.sh",
+		"/Users/rhydarharris/Dropbox/GenerateMooringFiles.py",
+		"/Users/rhydarharris/Desktop/CM_LINE_001.LIS",
+		"/Users/rhydarharris/Dropbox/writeAQWA_Files_Py.py",
+		"/Users/rhydarharris/Dropbox/WriteAQWA_Files_Rev01.pl",
+		"/Users/rhydarharris/Dropbox/RTools/coastalTools/NAMESPACE",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/Draft-2014-05-26X4/PontoonDetails.Rnw",
+		"/Users/rhydarharris/Dropbox/RTools/coastalTools/DESCRIPTION",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/Draft-2014-05-26X4/MetoceanData.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/Draft-2014-05-26X4/Introduction.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/Draft-2014-05-26X4/WindAndCurrent.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/Draft-2014-05-23X3/MetoceanData.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/DiscussionConclusions.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/WindAndCurrent.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/PontoonDetails.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/Introduction.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/MetoceanData.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/Main.bib",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/ProcessResults02.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/AnalyticalSolution.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/AppendixA.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/AppendixB.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/ModelDescription.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/ProcessResults.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/ProcessResultsTest.Rnw",
+		"/Volumes/PRDW_RLH01/Australia (A004) Fremantle Traffic Bridge Study/Calculations/TN01/Sections/SpreadMooring.Rnw",
+		"/Users/rhydarharris/Dropbox/Org/Examples/f-20.tjp",
+		"/Users/rhydarharris/.emacs",
+		"/Users/rhydarharris/Dropbox/Pampa/Project Management/Org-Mode-Planning.org",
+		"/Users/rhydarharris/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/42837564-D116-4812-BD24-FE3269DCBE76/For Rhydar/BW700m_LINE/BW700m_LINE.DAT",
+		"/Users/rhydarharris/Dropbox/Org/TaskjugglerProj.tjp",
+		"/Users/rhydarharris/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/rhydarharris/Dropbox/Org/Work-Week-2014-04-12.org",
+		"/Users/rhydarharris/Desktop/PRDW_RLH01/03_Scripts/C#/CoastalFlooding/Dev/CoastalEngineering/CoastalEngineering.cs",
+		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/Guidelines.bib",
+		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/PRDW_Practice_Guidelines_Presentation.Rnw",
+		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/MooringLines.Rnw",
+		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/VesselTypes.Rnw",
+		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/Forces.Rnw",
+		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/MooringDesignApproach.Rnw",
+		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/Introduction.Rnw",
+		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/MooringRestraint.Rnw",
+		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/MooringBulk.Rnw",
+		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/MooringLayouts.Rnw",
+		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/PRDW_Practice_Guidelines_Rev00.Rnw",
+		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/prdwTechNote.cls"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"cut",
+			"ounts",
+			"tt",
+			"tt\n",
+			"motion_limits[\\d]\n",
+			"motion_limits[1]\n",
+			"motion_limits\n",
+			"motion_limits[\\d]\n",
+			"motions_limits[\\d]\n",
+			"]/\n",
+			"A.sqlite",
+			",",
+			"Sjolte",
+			"finnegan",
+			"Sandvik",
+			"Sjolte",
+			"Mackay",
+			"file",
+			".\n",
+			"/",
+			"tree",
+			"auto_",
+			"auto_\n",
+			"auto_match\n",
+			" \n",
+			"heading",
+			"}} ",
+			"\\tag{",
+			"\\t\\t",
+			"\\t+",
+			"                         ",
+			"MYNEWTAB",
+			"\\s+",
+			"\\t"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\\",
+			"\\marginnote{",
+			"\\t",
+			"",
+			"\\t",
+			"",
+			"MYNEWTAB"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 248.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "Metocean.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 212.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

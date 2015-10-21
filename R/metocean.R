@@ -51,71 +51,89 @@ readMikeDFS0 <- function(data_file){
 #' @export
 #' @examples
 #' getExceedance()
-getExceedance <- function(df,variable,
- 	percentiles = c(c(0,0.01,0.02,0.05),seq(0.1,0.9,0.1),c(0.95,0.98,0.99,1)),
- 	xlabel, type = "season", hemisphere = "northern", output_type = "plot"){
-	library(lubridate)
-  library(Hmisc)
-  library(xtable)
-  library(tableplot)
+  getExceedance <- function(df,variable,
+   	percentiles = c(c(0,0.01,0.02,0.05),seq(0.1,0.9,0.1),c(0.95,0.98,0.99,1)),
+   	xlabel, type = "annual", hemisphere = "northern", output_type = "plot"){
+  	library(lubridate)
+    library(Hmisc)
+    library(xtable)
+    library(tableplot)
 
-	# Helper function to determine the months in a season
- 	getSeasonalData <- function(df,season){
-        spring <- c("Sep","Oct","Nov")
-        summer <- c("Dec","Jan","Feb")
-        autumn <- c("Mar","Apr","May")
-        winter <- c("Jun","Jul","Aug")
-        if (is.zoo(df)){
-          my_season <- df[which(month(ymd_hms(time(df)), label = TRUE) %in% get(season)),]
-        }
-        else {
-          my_season <- df[which(month(ymd_hms(df[[1]]),label = TRUE) %in% get(season)),]
-        }
-        return (my_season)
-	}
-	# Helper function to get a subset of of the month
-	getMonthlyData <- function(df,month){
-        data_results <- df[which(month(ymd_hms(df[[1]]),label = TRUE) %in% month),]
-        return(data_results)
-	}
-  plotSeasonalECDF <- function(df){
-        par(mar=c(5.1, 4.1, 2.1, 2.1),xpd = FALSE)
-        cols <- c("red","blue","orange","green")
-        seasons <- c("spring","summer","autumn","winter") 
-        # Plot seasonal ecdf 
-        plot(ecdf(df[[variable]]),lwd=2,xlab = xlabel,ylab = "Probability on non-exceedance[%]",main="",yaxt="n")
+  	# Helper function to determine the months in a season
+   	getSeasonalData <- function(df,season){
+          spring <- c("Sep","Oct","Nov")
+          summer <- c("Dec","Jan","Feb")
+          autumn <- c("Mar","Apr","May")
+          winter <- c("Jun","Jul","Aug")
+          if (is.zoo(df)){
+            my_season <- df[which(month(ymd_hms(time(df)), label = TRUE) %in% get(season)),]
+          }
+          else {
+            my_season <- df[which(month(ymd_hms(df[[1]]),label = TRUE) %in% get(season)),]
+          }
+          return (my_season)
+  	}
+  	# Helper function to get a subset of of the month
+  	getMonthlyData <- function(df,month){
+          data_results <- df[which(month(ymd_hms(df[[1]]),label = TRUE) %in% month),]
+          return(data_results)
+  	}
 
-        axis(2,at=percentiles,labels=percentiles)
-        grid(col="dark grey",ny="")
-        abline(h=percentiles,col="dark grey", lty=3)
+    plotSeasonalECDF <- function(df){
+          par(mar=c(5.1, 4.1, 2.1, 2.1),xpd = FALSE)
+          cols <- c("red","blue","orange","green")
+          seasons <- c("spring","summer","autumn","winter")
+          # Plot seasonal ecdf
+          plot(ecdf(df[[variable]]),lwd=2,xlab = xlabel,ylab = "Probability on non-exceedance[%]",main="",yaxt="n")
 
-        sapply(1:length(seasons), function (x) {plot(ecdf(getSeasonalData(df,seasons[x])[[variable]]),col=cols[x],lwd=2,add=TRUE,xlab="",ylab="",yaxt="n")})
+          axis(2,at=percentiles,labels=percentiles)
+          grid(col="dark grey",ny="")
+          abline(h=percentiles,col="dark grey", lty=3)
 
-        plot(ecdf(df[[variable]]),lwd=2,xlab = "",ylab = "",main="",add=TRUE,yaxt="n")
+          sapply(1:length(seasons), function (x) {plot(ecdf(getSeasonalData(df,seasons[x])[[variable]]),col=cols[x],lwd=2,add=TRUE,xlab="",ylab="",yaxt="n")})
 
-        # Legend for plotting
-        legend("bottomright", legend=c("annual",seasons), col=c("black",cols),lwd=2,cex=0.8)
+          plot(ecdf(df[[variable]]),lwd=2,xlab = "",ylab = "",main="",add=TRUE,yaxt="n")
+
+          # Legend for plotting
+          legend("bottomright", legend=c("annual",seasons), col=c("black",cols),lwd=2,cex=0.8)
+    }
+  	#
+    tabulateSeasonalECDF <- function(df){
+          annual <- quantile(df[[variable]],probs = percentiles, na.rm = TRUE)
+          row_names <- names(annual)
+          annual <- as.numeric(annual)
+          seasons <- c("spring","summer","autumn","winter")
+          seasons_quants <- sapply(1:length(seasons), function(x) {as.numeric(
+                  quantile(getSeasonalData(df,seasons[x])[[variable]],probs = percentiles, na.rm = TRUE))})
+          colnames(seasons_quants) <- seasons
+          all_df <- cbind(seasons_quants,annual)
+          rownames(all_df) <- row_names
+          #print(colnames(all_df))
+          colnames(all_df) <- capitalize(colnames(all_df))
+          print(xtable(all_df), type="html")
+    }
+
+    if (output_type == "plot"){
+      plotSeasonalECDF(df)
+    }
+    if (output_type == "table"){
+      tabulateSeasonalECDF(df)
+      }
   }
-	#
-  tabulateSeasonalECDF <- function(df){
-        annual <- quantile(df[[variable]],probs = percentiles, na.rm = TRUE)
-        row_names <- names(annual)
-        annual <- as.numeric(annual)
-        seasons <- c("spring","summer","autumn","winter")
-        seasons_quants <- sapply(1:length(seasons), function(x) {as.numeric(
-                quantile(getSeasonalData(df,seasons[x])[[variable]],probs = percentiles, na.rm = TRUE))})
-        colnames(seasons_quants) <- seasons
-        all_df <- cbind(seasons_quants,annual)
-        rownames(all_df) <- row_names
-        #print(colnames(all_df))
-        colnames(all_df) <- capitalize(colnames(all_df))
-        print(xtable(all_df), type="html")
-  }
 
-  if (output_type == "plot"){
-    plotSeasonalECDF(df)
+
+#' Function to plot wind and wave rose plots
+#'
+#' 
+#' @param df time series of metocean data
+#' @param hs magnitude variable
+#' @param dm direction variable
+#' @param bins number of bins in the 
+#' @export 
+#' @examples 
+#' plotRose()
+plotRose <- function(df,hs,wd,bins){
+    library(openair)
+    windRose()
+    return(plotObj)
   }
-  if (output_type == "table"){
-    tabulateSeasonalECDF(df)
-  }
-}

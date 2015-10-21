@@ -6,7 +6,7 @@
 \usage{
 getExceedance(df, variable, percentiles = c(c(0, 0.01, 0.02, 0.05), seq(0.1,
   0.9, 0.1), c(0.95, 0.98, 0.99, 1)), xlabel, type = "season",
-  hemisphere = "northern")
+  hemisphere = "northern", output_type = "plot")
 }
 \arguments{
 \item{df}{time series of metocean data}

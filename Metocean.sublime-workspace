@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"simp",
+				"simpleFuncR	generateSimpleFunctionR"
+			],
+			[
 				"det",
 				"detach"
 			],
@@ -255,7 +259,15 @@
 			"file": "R/metocean.R",
 			"settings":
 			{
-				"buffer_size": 4372,
+				"buffer_size": 4832,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rhydarharris/Desktop/test.R",
+			"settings":
+			{
+				"buffer_size": 21934,
 				"line_ending": "Unix"
 			}
 		},
@@ -279,7 +291,7 @@
 			"file": "/Users/rhydarharris/Desktop/Saldanha/Metocean.Rmd",
 			"settings":
 			{
-				"buffer_size": 1024,
+				"buffer_size": 911,
 				"line_ending": "Unix"
 			}
 		},
@@ -292,10 +304,10 @@
 			}
 		},
 		{
-			"contents": "> \nError: unexpected '>' in \">\"\n> \n> knit(\"Metocean.Rmd\")\n\n\nprocessing file: Metocean.Rmd\n  |                                                                         |                                                                 |   0%  |                                                                         |........                                                         |  12%\n  ordinary text without R code\n\n  |                                                                         |................                                                 |  25%\nlabel: unnamed-chunk-1 (with options) \nList of 3\n $ echo   : logi FALSE\n $ warning: logi FALSE\n $ eval   : logi TRUE\n\n* installing *source* package 'Metocean' ...\n** R\n** preparing package for lazy loading\n** help\n*** installing help indices\n** building package indices\n** testing if installed package can be loaded\n* DONE (Metocean)\n  |                                                                         |........................                                         |  38%\n  ordinary text without R code\n\n  |                                                                         |................................                                 |  50%\nlabel: unnamed-chunk-2 (with options) \nList of 3\n $ warning: logi FALSE\n $ echo   : logi FALSE\n $ message: logi FALSE\n\nLoading required package: hexbin\n\nopenair object created by:\n	scatterPlot(mydata = input_df, x = Hs, y = Tp, method = \"hexbin\",     cols = \"jet\", key = FALSE, key.title = \"What\", ref.x = list(v = c(col_hmo),         col = \"dark gray\", lwd = 3), ref.y = list(h = c(col_tp),         col = \"dark gray\", lwd = 3), xbins = 100, hemisphere = \"southern\",     aspect = 1, hexbin = FALSE, silent = TRUE, hexbinplot.colorkey = 0)\n\nthis contains:\n	a single data frame:\n	$data [with no subset structure]\n	a single plot object:\n	$plot [with no subset structure]\n\n\nopenair object created by:\n	scatterPlot(mydata = input_df, x = Hs, y = Dp, method = \"hexbin\",     cols = \"jet\", ref.x = list(v = c(col_hmo), col = \"dark gray\",         lwd = 3), ref.y = list(h = c(col_dir), col = \"dark gray\",         lwd = 3), xbins = 100, hemisphere = \"southern\", aspect = 1)\n\nthis contains:\n	a single data frame:\n	$data [with no subset structure]\n	a single plot object:\n	$plot [with no subset structure]\n\n\nopenair object created by:\n	scatterPlot(mydata = input_df, x = Dp, y = Tp, method = \"hexbin\",     cols = \"jet\", ref.x = list(v = c(col_dir), col = \"dark gray\",         lwd = 3), ref.y = list(h = c(col_tp), col = \"dark gray\",         lwd = 3), xbins = 100, hemisphere = \"southern\", aspect = 1)\n\nthis contains:\n	a single data frame:\n	$data [with no subset structure]\n	a single plot object:\n	$plot [with no subset structure]\n\n  |                                                                         |.........................................                        |  62%\n  ordinary text without R code\n\n  |                                                                         |.................................................                |  75%\nlabel: unnamed-chunk-3 (with options) \nList of 5\n $ eval      : logi TRUE\n $ results   : chr \"asis\"\n $ out.extra : chr \"style=\\\"float:left\\\"\"\n $ echo      : logi FALSE\n $ fig.height: num 4\n\n  |                                                                         |.........................................................        |  88%\nlabel: unnamed-chunk-4 (with options) \nList of 4\n $ eval     : logi TRUE\n $ results  : chr \"asis\"\n $ out.extra: chr \"style=\\\"float:right\\\"\"\n $ echo     : logi FALSE\n\n  |                                                                         |.................................................................| 100%\n  ordinary text without R code\n\n\noutput file: Metocean.md\n\n[1] \"Metocean.md\"\n> wvaes <- readMikeDFS0 <-",
+			"contents": "\nR version 3.1.2 (2014-10-31) -- \"Pumpkin Helmet\"\nCopyright (C) 2014 The R Foundation for Statistical Computing\nPlatform: x86_64-apple-darwin13.4.0 (64-bit)\n\nR is free software and comes with ABSOLUTELY NO WARRANTY.\nYou are welcome to redistribute it under certain conditions.\nType 'license()' or 'licence()' for distribution details.\n\n  Natural language support but running in an English locale\n\nR is a collaborative project with many contributors.\nType 'contributors()' for more information and\n'citation()' on how to cite R or R packages in publications.\n\nType 'demo()' for some demos, 'help()' for on-line help, or\n'help.start()' for an HTML browser interface to help.\nType 'q()' to quit R.\n\n> getwd()\n[1] \"/Applications/Sublime Text.app/Contents/MacOS\"\n> setwd(\"/Users/rhydarharris/Desktop/\")\n> dir() \n [1] \"FSRU 177K\"              \"Library\"                \"PRDW_RLH01\"            \n [4] \"Process_CSIR_lw_data\"   \"QGIS_Tests\"             \"Saldanha\"              \n [7] \"Saldanha 01\"            \"SamsungGalaxyS3Mini\"    \"Test\"                  \n[10] \"bluewhale1444982483400\" \"test.R\"                \n> setwd(\"Saldanha\")\n> library(knitr)\n> knit(\"Metocean.Rmd\")\n\n\nprocessing file: Metocean.Rmd\n  |                                                                         |                                                                 |   0%  |                                                                         |........                                                         |  12%\n  ordinary text without R code\n\n  |                                                                         |................                                                 |  25%\nlabel: unnamed-chunk-1 (with options) \nList of 3\n $ echo   : logi FALSE\n $ warning: logi FALSE\n $ eval   : logi TRUE\n\n* installing *source* package 'Metocean' ...\n** R\n** preparing package for lazy loading\n** help\n*** installing help indices\n** building package indices\n** testing if installed package can be loaded\n* DONE (Metocean)\n  |                                                                         |........................                                         |  38%\n  ordinary text without R code\n\n  |                                                                         |................................                                 |  50%\nlabel: unnamed-chunk-2 (with options) \nList of 3\n $ warning: logi FALSE\n $ echo   : logi FALSE\n $ message: logi FALSE\n\n\nAttaching package: 'zoo'\n\nThe following objects are masked from 'package:base':\n\n    as.Date, as.Date.numeric\n\nLoading required package: hexbin\n\nopenair object created by:\n	scatterPlot(mydata = input_df, x = Hs, y = Tp, method = \"hexbin\",     cols = \"jet\", key = FALSE, key.title = \"What\", ref.x = list(v = c(col_hmo),         col = \"dark gray\", lwd = 3), ref.y = list(h = c(col_tp),         col = \"dark gray\", lwd = 3), xbins = 100, hemisphere = \"southern\",     aspect = 1, hexbin = FALSE, silent = TRUE, hexbinplot.colorkey = 0)\n\nthis contains:\n	a single data frame:\n	$data [with no subset structure]\n	a single plot object:\n	$plot [with no subset structure]\n\n\nopenair object created by:\n	scatterPlot(mydata = input_df, x = Hs, y = Dp, method = \"hexbin\",     cols = \"jet\", ref.x = list(v = c(col_hmo), col = \"dark gray\",         lwd = 3), ref.y = list(h = c(col_dir), col = \"dark gray\",         lwd = 3), xbins = 100, hemisphere = \"southern\", aspect = 1)\n\nthis contains:\n	a single data frame:\n	$data [with no subset structure]\n	a single plot object:\n	$plot [with no subset structure]\n\n\nopenair object created by:\n	scatterPlot(mydata = input_df, x = Dp, y = Tp, method = \"hexbin\",     cols = \"jet\", ref.x = list(v = c(col_dir), col = \"dark gray\",         lwd = 3), ref.y = list(h = c(col_tp), col = \"dark gray\",         lwd = 3), xbins = 100, hemisphere = \"southern\", aspect = 1)\n\nthis contains:\n	a single data frame:\n	$data [with no subset structure]\n	a single plot object:\n	$plot [with no subset structure]\n\n  |                                                                         |.........................................                        |  62%\n  ordinary text without R code\n\n  |                                                                         |.................................................                |  75%\nlabel: unnamed-chunk-3 (with options) \nList of 5\n $ eval      : logi TRUE\n $ results   : chr \"asis\"\n $ out.extra : chr \"style=\\\"float:left\\\"\"\n $ echo      : logi FALSE\n $ fig.height: num 4\n\n  |                                                                         |.........................................................        |  88%\nlabel: unnamed-chunk-4 (with options) \nList of 4\n $ eval     : logi TRUE\n $ results  : chr \"asis\"\n $ out.extra: chr \"style=\\\"float:right\\\"\"\n $ echo     : logi FALSE\n\n  |                                                                         |.................................................................| 100%\n  ordinary text without R code\n\n\noutput file: Metocean.md\n\n[1] \"Metocean.md\"\nWarning messages:\n1: package 'devtools' was built under R version 3.1.3 \n2: Username parameter is deprecated. Please use rhydar/Metocean \n> \n> knit(\"Metocean.Rmd\")\n\n\nprocessing file: Metocean.Rmd\n  |                                                                         |                                                                 |   0%  |                                                                         |........                                                         |  12%\n  ordinary text without R code\n\n  |                                                                         |................                                                 |  25%\nlabel: unnamed-chunk-1 (with options) \nList of 3\n $ echo   : logi FALSE\n $ warning: logi FALSE\n $ eval   : logi TRUE\n\n* installing *source* package 'Metocean' ...\n** R\n** preparing package for lazy loading\n** help\n*** installing help indices\n** building package indices\n** testing if installed package can be loaded\n* DONE (Metocean)\n  |                                                                         |........................                                         |  38%\n  ordinary text without R code\n\n  |                                                                         |................................                                 |  50%\nlabel: unnamed-chunk-2 (with options) \nList of 3\n $ warning: logi FALSE\n $ echo   : logi FALSE\n $ message: logi FALSE\n\n\nopenair object created by:\n	scatterPlot(mydata = input_df, x = Hs, y = Tp, method = \"hexbin\",     cols = \"jet\", key = FALSE, key.title = \"What\", ref.x = list(v = c(col_hmo),         col = \"dark gray\", lwd = 3), ref.y = list(h = c(col_tp),         col = \"dark gray\", lwd = 3), xbins = 100, hemisphere = \"southern\",     aspect = 1, hexbin = FALSE, silent = TRUE, hexbinplot.colorkey = 0)\n\nthis contains:\n	a single data frame:\n	$data [with no subset structure]\n	a single plot object:\n	$plot [with no subset structure]\n\n\nopenair object created by:\n	scatterPlot(mydata = input_df, x = Hs, y = Dp, method = \"hexbin\",     cols = \"jet\", ref.x = list(v = c(col_hmo), col = \"dark gray\",         lwd = 3), ref.y = list(h = c(col_dir), col = \"dark gray\",         lwd = 3), xbins = 100, hemisphere = \"southern\", aspect = 1)\n\nthis contains:\n	a single data frame:\n	$data [with no subset structure]\n	a single plot object:\n	$plot [with no subset structure]\n\n\nopenair object created by:\n	scatterPlot(mydata = input_df, x = Dp, y = Tp, method = \"hexbin\",     cols = \"jet\", ref.x = list(v = c(col_dir), col = \"dark gray\",         lwd = 3), ref.y = list(h = c(col_tp), col = \"dark gray\",         lwd = 3), xbins = 100, hemisphere = \"southern\", aspect = 1)\n\nthis contains:\n	a single data frame:\n	$data [with no subset structure]\n	a single plot object:\n	$plot [with no subset structure]\n\n  |                                                                         |.........................................                        |  62%\n  ordinary text without R code\n\n  |                                                                         |.................................................                |  75%\nlabel: unnamed-chunk-3 (with options) \nList of 5\n $ eval      : logi TRUE\n $ results   : chr \"asis\"\n $ out.extra : chr \"style=\\\"float:left\\\"\"\n $ echo      : logi FALSE\n $ fig.height: num 4\n\n  |                                                                         |.........................................................        |  88%\nlabel: unnamed-chunk-4 (with options) \nList of 4\n $ eval     : logi TRUE\n $ results  : chr \"asis\"\n $ out.extra: chr \"style=\\\"float:right\\\"\"\n $ echo     : logi FALSE\n\n  |                                                                         |.................................................................| 100%\n  ordinary text without R code\n\n\noutput file: Metocean.md\n\n[1] \"Metocean.md\"\nWarning message:\nUsername parameter is deprecated. Please use rhydar/Metocean \n> knit(\"Metocean.Rmd\")\n\n\nprocessing file: Metocean.Rmd\n  |                                                                         |                                                                 |   0%  |                                                                         |.........                                                        |  14%\n  ordinary text without R code\n\n  |                                                                         |...................                                              |  29%\nlabel: unnamed-chunk-1 (with options) \nList of 3\n $ echo   : logi FALSE\n $ warning: logi FALSE\n $ eval   : logi TRUE\n\n* installing *source* package 'Metocean' ...\n** R\n** preparing package for lazy loading\n** help\n*** installing help indices\n** building package indices\n** testing if installed package can be loaded\n* DONE (Metocean)\n  |                                                                         |............................                                     |  43%\n  ordinary text without R code\n\n  |                                                                         |.....................................                            |  57%\nlabel: unnamed-chunk-2 (with options) \nList of 3\n $ warning: logi FALSE\n $ echo   : logi FALSE\n $ message: logi FALSE\n\n  |                                                                         |..............................................                   |  71%\nlabel: unnamed-chunk-3 (with options) \nList of 5\n $ eval      : logi TRUE\n $ results   : chr \"asis\"\n $ out.extra : chr \"style=\\\"float:left\\\"\"\n $ echo      : logi FALSE\n $ fig.height: num 4\n\n  |                                                                         |........................................................         |  86%\nlabel: unnamed-chunk-4 (with options) \nList of 4\n $ eval     : logi TRUE\n $ results  : chr \"asis\"\n $ out.extra: chr \"style=\\\"float:right\\\"\"\n $ echo     : logi FALSE\n\n  |                                                                         |.................................................................| 100%\n  ordinary text without R code\n\n\noutput file: Metocean.md\n\n[1] \"Metocean.md\"\nWarning message:\nUsername parameter is deprecated. Please use rhydar/Metocean \n> library(openair)\n> help(windRose)\nwindRose                package:openair                R Documentation\n\nTraditional wind rose plot and pollution rose variation\n\nDescription:\n\n     The traditional wind rose plot that plots wind speed and wind\n     direction by different intervals. The pollution rose applies the\n     same plot structure but substitutes other measurements, most\n     commonly a pollutant time series, for wind speed.\n\nUsage:\n\n     windRose(mydata, ws = \"ws\", wd = \"wd\", ws2 = NA, wd2 = NA,\n     ws.int = 2, angle = 30, type = \"default\", bias.corr = TRUE, cols = \"default\",\n     grid.line = NULL, width = 1, seg = NULL, auto.text = TRUE, breaks\n     = 4, offset = 10, max.freq = NULL, paddle = TRUE, key.header =\n     NULL, key.footer = \"(m/s)\", key.position = \"bottom\", key = TRUE,\n     dig.lab = 5, statistic = \"prop.count\", pollutant = NULL, annotate\n     = TRUE, border = NA, ...)\n     \n     \n         pollutionRose(mydata, pollutant = \"nox\", key.footer = pollutant,\n            key.position = \"right\", key = TRUE, breaks = 6, paddle = FALSE,\n     seg = 0.9, ...)\n     \nArguments:\n\n  mydata: A data frame containing fields 'ws' and 'wd'\n\n      ws: Name of the column representing wind speed.\n\n      wd: Name of the column representing wind direction.\n\n     ws2: The user can supply a second set of wind speed and wind\n          direction values with which the first can be compared. See\n          details below for full explanation.\n\n     wd2: see 'ws2'.\n\n  ws.int: The Wind speed interval. Default is 2 m/s but for low met\n          masts with low mean wind speeds a value of 1 or 0.5 m/s may\n          be better. Note, this argument is superseded in\n          'pollutionRose'. See 'breaks' below.\n\n   angle: Default angle of \"spokes\" is 30. Other potentially useful\n          angles are 45 and 10. Note that the width of the wind speed\n          interval may need adjusting using 'width'.\n\n    type: 'type' determines how the data are split i.e. conditioned,\n          and then plotted. The default is will produce a single plot\n          using the entire data. Type can be one of the built-in types\n          as detailed in 'cutData' e.g. \"season\", \"year\", \"weekday\" and\n          so on. For example, 'type = \"season\"' will produce four plots\n          - one for each season.\n\n          It is also possible to choose 'type' as another variable in\n          the data frame. If that variable is numeric, then the data\n          will be split into four quantiles (if possible) and labelled\n          accordingly. If type is an existing character or factor\n          variable, then those categories/levels will be used directly.\n          This offers great flexibility for understanding the variation\n          of different variables and how they depend on one another.\n\n          Type can be up length two e.g. 'type = c(\"season\",\n          \"weekday\")' will produce a 2x2 plot split by season and day\n          of the week. Note, when two types are provided the first\n          forms the columns and the second the rows.\n\nbias.corr: When 'angle' does not divide exactly into 360 a bias is\n          introduced in the frequencies when the wind direction is\n          already supplied rounded to the nearest 10 degrees, as is\n          often the case. For example, if 'angle = 22.5', N, E, S, W\n          will include 3 wind sectors and all other angles will be two.\n          A bias correction can made to correct for this problem. A\n          simple method according to Applequist (2012) is used to\n          adjust the frequencies.\n\n    cols: Colours to be used for plotting. Options include \"default\",\n          \"increment\", \"heat\", \"jet\", \"hue\" and user defined. For user\n          defined the user can supply a list of colour names recognised\n          by R (type 'colours()' to see the full list). An example\n          would be 'cols = c(\"yellow\", \"green\", \"blue\", \"black\")'.\n\ngrid.line: Grid line interval to use. If 'NULL', as in default, this is\n          assigned by 'windRose' based on the available data range.\n          However, it can also be forced to a specific value, e.g.\n          'grid.line = 10'.\n\n   width: For 'paddle = TRUE', the adjustment factor for width of wind\n          speed intervals. For example, 'width = 1.5' will make the\n          paddle width 1.5 times wider.\n\n     seg: For 'pollutionRose' 'seg' determines with width of the\n          segments. For example, 'seg = 0.5' will produce segments 0.5\n          * 'angle'.\n\nauto.text: Either 'TRUE' (default) or 'FALSE'. If 'TRUE' titles and\n          axis labels will automatically try and format pollutant names\n          and units properly e.g.  by subscripting the '2' in NO2.\n\n  breaks: Most commonly, the number of break points for wind speed in\n          'windRose' or pollutant in 'pollutionRose'. For 'windRose'\n          and the 'ws.int' default of 2 m/s, the default, 4, generates\n          the break points 2, 4, 6, 8 m/s. For 'pollutionRose', the\n          default, 6, attempts to breaks the supplied data at\n          approximately 6 sensible break points. However, 'breaks' can\n          also be used to set specific break points. For example, the\n          argument 'breaks = c(0, 1, 10, 100)' breaks the data into\n          segments <1, 1-10, 10-100, >100.\n\n  offset: The size of the 'hole' in the middle of the plot, expressed\n          as a percentage of the polar axis scale, default 10.\n\nmax.freq: Controls the scaling used by setting the maximum value for\n          the radial limits. This is useful to ensure several plots use\n          the same radial limits.\n\n  paddle: Either 'TRUE' (default) or 'FALSE'. If 'TRUE' plots rose\n          using `paddle' style spokes. If 'FALSE' plots rose using\n          `wedge' style spokes.\n\nkey.header: Adds additional text/labels above and/or below the scale\n          key, respectively. For example, passing 'windRose(mydata,\n          key.header = \"ws\")' adds the addition text as a scale header.\n          Note: This argument is passed to 'drawOpenKey' via\n          'quickText', applying the auto.text argument, to handle\n          formatting.\n\nkey.footer: see 'key.footer'.\n\nkey.position: Location where the scale key is to plotted. Allowed\n          arguments currently include \"top\", \"right\", \"bottom\" and\n          \"left\".\n\n     key: Fine control of the scale key via 'drawOpenKey'. See\n          'drawOpenKey' for further details.\n\n dig.lab: The number of signficant figures at which scientific number\n          formatting is used in break point and key labelling. Default\n          5.\n\nstatistic: The 'statistic' to be applied to each data bin in the plot.\n          Options currently include \"prop.count\", \"prop.mean\" and\n          \"abs.count\". The default \"prop.count\" sizes bins according to\n          the proportion of the frequency of measurements.  Similarly,\n          \"prop.mean\" sizes bins according to their relative\n          contribution to the mean. \"abs.count\" provides the absolute\n          count of measurements in each bin.\n\npollutant: Alternative data series to be sampled instead of wind speed.\n          The 'windRose' default NULL is equivalent to 'pollutant =\n          \"ws\"'.\n\nannotate: If 'TRUE' then the percentage calm and mean values are\n          printed in each panel.\n\n  border: Border colour for shaded areas. Default is no border.\n\n     ...: For 'pollutionRose' other parameters that are passed on to\n          'windRose'. For 'windRose' other parameters that are passed\n          on to 'drawOpenKey', 'lattice:xyplot' and 'cutData'. Axis and\n          title labelling options ('xlab', 'ylab', 'main') are passed\n          to 'xyplot' via 'quickText' to handle routine formatting.\n\nDetails:\n\n     For 'windRose' data are summarised by direction, typically by 45\n     or 30 (or 10) degrees and by different wind speed categories.\n     Typically, wind speeds are represented by different width\n     \"paddles\". The plots show the proportion (here represented as a\n     percentage) of time that the wind is from a certain angle and wind\n     speed range.\n\n     By default 'windRose' will plot a windRose in using \"paddle\" style\n     segments and placing the scale key below the plot.\n\n     The argument 'pollutant' uses the same plotting structure but\n     substitutes another data series, defined by 'pollutant', for wind\n     speed.\n\n     The option 'statistic = \"prop.mean\"' provides a measure of the\n     relative contribution of each bin to the panel mean, and is\n     intended for use with 'pollutionRose'.\n\n     'pollutionRose' is a 'windRose' wrapper which brings 'pollutant'\n     forward in the argument list, and attempts to sensibly rescale\n     break points based on the 'pollutant' data range by by-passing\n     'ws.int'.\n\n     By default, 'pollutionRose' will plot a pollution rose of 'nox'\n     using \"wedge\" style segments and placing the scale key to the\n     right of the plot.\n\n     It is possible to compare two wind speed-direction data sets using\n     'pollutionRose'. There are many reasons for doing so e.g. to see\n     how one site compares with another or for meteorological model\n     evaluation. In this case, 'ws' and 'wd' are considered to the the\n     reference data sets with which a second set of wind speed and wind\n     directions are to be compared ('ws2' and 'wd2'). The first set of\n     values is subtracted from the second and the differences compared.\n     If for example, 'wd2' was biased positive compared with 'wd' then\n     'pollutionRose' will show the bias in polar coordinates. In its\n     default use, wind direction bias is colour-coded to show negative\n     bias in one colour and positive bias in another.\n\nValue:\n\n     As well as generating the plot itself, 'windRose' and\n     'pollutionRose' also return an object of class \"openair\". The\n     object includes three main components: 'call', the command used to\n     generate the plot; 'data', the data frame of summarised\n     information used to make the plot; and 'plot', the plot itself. If\n     retained, e.g. using 'output <- windRose(mydata)', this output can\n     be used to recover the data, reproduce or rework the original plot\n     or undertake further analysis.\n\n     An openair output can be manipulated using a number of generic\n     operations, including 'print', 'plot' and 'summarise'.\n\n     Summarised proportions can also be extracted directly using the\n     '$data' operator, e.g.  'object$data' for 'output <-\n     windRose(mydata)'. This returns a data frame with three set\n     columns: 'cond', conditioning based on 'type'; 'wd', the wind\n     direction; and 'calm', the 'statistic' for the proportion of data\n     unattributed to any specific wind direction because it was\n     collected under calm conditions; and then several (one for each\n     range binned for the plot) columns giving proportions of\n     measurements associated with each 'ws' or 'pollutant' range\n     plotted as a discrete panel.\n\nNote:\n\n     'windRose' and 'pollutionRose' both use drawOpenKey to produce\n     scale keys.\n\nAuthor(s):\n\n     David Carslaw (with some additional contributions by Karl Ropkins)\n\nReferences:\n\n     Applequist, S, 2012: Wind Rose Bias Correction. J. Appl. Meteor.\n     Climatol., 51, 1305-1309.\n\n     This paper seems to be the original?\n\n     Droppo, J.G. and B.A. Napier (2008) Wind Direction Bias in\n     Generating Wind Roses and Conducting Sector-Based Air Dispersion\n     Modeling, Journal of the Air & Waste Management Association, 58:7,\n     913-918.\n\nSee Also:\n\n     See 'drawOpenKey' for fine control of the scale key.\n\n     See 'polarFreq' for a more flexible version that considers other\n     statistics and pollutant concentrations.\n\nExamples:\n\n     # load example data from package data(mydata)\n     \n     # basic plot\n     windRose(mydata)\n     \n     # one windRose for each year\n     windRose(mydata,type = \"year\")\n     \n     # windRose in 10 degree intervals with gridlines and width adjusted\n     ## Not run:\n     \n     windRose(mydata, angle = 10, width = 0.2, grid.line = 1)\n     ## End(Not run)\n     \n     \n     # pollutionRose of nox\n     pollutionRose(mydata, pollutant = \"nox\")\n     \n     ## source apportionment plot - contribution to mean\n     ## Not run:\n     \n     pollutionRose(mydata, pollutant = \"pm10\", type = \"year\", statistic = \"prop.mean\")\n     ## End(Not run)\n     \n     \n     ## example of comparing 2 met sites\n     ## first we will make some new ws/wd data with a postive bias\n     mydata$ws2 = mydata$ws + 2 * rnorm(nrow(mydata)) + 1\n     mydata$wd2 = mydata$wd + 30 * rnorm(nrow(mydata)) + 30\n     \n     ## need to correct negative wd\n     id <- which(mydata$wd2 < 0)\n     mydata$wd2[id] <- mydata$wd2[id] + 360\n     \n     ## results show postive bias in wd and ws\n     pollutionRose(mydata, ws = \"ws\", wd = \"wd\", ws2 = \"ws2\", wd2 = \"wd2\")\n     \n\n> knit(\"Metocean.Rmd\")\n\n\nprocessing file: Metocean.Rmd\n  |                                                                         |                                                                 |   0%  |                                                                         |.......                                                          |  11%\n  ordinary text without R code\n\n  |                                                                         |..............                                                   |  22%\nlabel: unnamed-chunk-1 (with options) \nList of 3\n $ echo   : logi FALSE\n $ warning: logi FALSE\n $ eval   : logi TRUE\n\n* installing *source* package 'Metocean' ...\n** R\n** preparing package for lazy loading\n** help\n*** installing help indices\n** building package indices\n** testing if installed package can be loaded\n* DONE (Metocean)\n  |                                                                         |......................                                           |  33%\n  ordinary text without R code\n\n  |                                                                         |.............................                                    |  44%\nlabel: unnamed-chunk-2 (with options) \nList of 3\n $ warning: logi FALSE\n $ echo   : logi FALSE\n $ message: logi FALSE\n\n  |                                                                         |....................................                             |  56%\nlabel: unnamed-chunk-3 (with options) \nList of 5\n $ eval      : logi TRUE\n $ results   : chr \"asis\"\n $ out.extra : chr \"style=\\\"float:left\\\"\"\n $ echo      : logi FALSE\n $ fig.height: num 4\n\n  |                                                                         |...........................................                      |  67%\nlabel: unnamed-chunk-4 (with options) \nList of 4\n $ eval     : logi TRUE\n $ results  : chr \"asis\"\n $ out.extra: chr \"style=\\\"float:right\\\"\"\n $ echo     : logi FALSE\n\n  |                                                                         |...................................................              |  78%\n  ordinary text without R code\n\n  |                                                                         |..........................................................       |  89%\nlabel: unnamed-chunk-5\n  |                                                                         |.................................................................| 100%\n  ordinary text without R code\n\n\noutput file: Metocean.md\n\n[1] \"Metocean.md\"\nWarning message:\nUsername parameter is deprecated. Please use rhydar/Metocean \n> ",
 			"settings":
 			{
-				"buffer_size": 3855,
+				"buffer_size": 26791,
 				"line_ending": "Unix",
 				"name": "*REPL* [r]",
 				"scratch": true
@@ -664,7 +676,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -673,15 +685,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4372,
+						"buffer_size": 4832,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								990,
-								990
+								1330,
+								1330
 							]
 						],
 						"settings":
@@ -692,14 +704,43 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1035.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "/Users/rhydarharris/Desktop/test.R",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21934,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14161,
+								14161
+							]
+						],
+						"settings":
+						{
+							"r_box_status": false,
+							"syntax": "Packages/R-Box/syntax/R Extended.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "R/polarPlot.r",
 					"semi_transient": false,
 					"settings":
@@ -726,11 +767,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "R/generatePivot.r",
 					"semi_transient": false,
 					"settings":
@@ -754,27 +795,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2455.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "/Users/rhydarharris/Desktop/Saldanha/Metocean.Rmd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1024,
+						"buffer_size": 911,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								438,
-								347
+								364,
+								364
 							]
 						],
 						"settings":
@@ -786,11 +827,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "R/processNCEP.r",
 					"semi_transient": false,
 					"settings":
@@ -813,10 +854,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 47.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -826,19 +867,19 @@
 			"sheets":
 			[
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3855,
+						"buffer_size": 26791,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3855,
-								3855
+								26791,
+								26791
 							]
 						],
 						"settings":
@@ -853,7 +894,7 @@
 							"line_numbers": false,
 							"repl": true,
 							"repl_external_id": "r",
-							"repl_id": "7928389c41ee42ef97a58c3ad86dd9b4",
+							"repl_id": "1dbd14d110034ae1a95b5f83a0bc659e",
 							"repl_restart_args":
 							{
 								"additional_scopes":
@@ -921,10 +962,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 615.0,
+						"translation.y": 8865.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -958,7 +999,7 @@
 		"cols":
 		[
 			0.0,
-			0.471626784227,
+			0.507136516466,
 			1.0
 		],
 		"rows":
@@ -1010,7 +1051,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

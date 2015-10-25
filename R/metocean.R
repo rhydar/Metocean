@@ -265,6 +265,6 @@ plotScatter <- function(input_df,col_index = c(2,3,4),labels,...){
   t3$plot$xlab <- labels[2]
   t3$plot$ylab <- labels[3]
 
-  scatterPlots <- list(t1,t2,t3)
+  scatterPlots <- as.list(t1,t2,t3)
   return(scatterPlots)
 }

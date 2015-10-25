@@ -254,7 +254,7 @@ plotScatter <- function(input_df,col_index = c(2,3,4),labels,...){
 
   t1 <- scatterPlot(input_df,x=Hs,y=Tp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)#,type="season")
   t2 <- scatterPlot(input_df,x=Hs,y=Dp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)
-  t3<- scatterPlot(input_df,x=Tp,y=Dp,method = "hexbin",xbins=100,cols = "jet",aspect=1,hemisphere="southern")#,type="season")
+  t3 <- scatterPlot(input_df,x=Tp,y=Dp,method = "hexbin",xbins=100,cols = "jet",aspect=1,hemisphere="southern")#,type="season")
 
   t1$plot$xlab <- labels[1]
   t1$plot$ylab <- labels[2]
@@ -265,6 +265,6 @@ plotScatter <- function(input_df,col_index = c(2,3,4),labels,...){
   t3$plot$xlab <- labels[2]
   t3$plot$ylab <- labels[3]
 
-  scatterPlots <- list(c(t1,t2,t3))
+  scatterPlots <- list(t1,t2,t3)
   return(scatterPlots)
 }

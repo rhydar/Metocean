@@ -224,3 +224,37 @@ generatePivot <- function(df1,variables,bins,...){
     return(pivot_table)
 }
 
+#' Function to plot wave scatter plot
+#'
+#' 
+#' @param input_df
+#' @param col_index Index of required variables for scatter plot
+#' @return multiple scatter plot objects
+#' @export 
+#' @examples 
+#' plotScatter(input_df,col_index)
+plotScatter <- function(input_df,col_index = c(2,3,4),...){
+  # # Description ==============================================================
+  # Author:      Rhydar Lee Harris
+  # Date:        2015-03-28 T20:38:24Z 
+  # Type:        Wave hexbin - Check for DF and Zoo
+  # Description:  Generates a hexbin scatter plot matrix
+  # ============================================================================
+  # Args:
+  #   input_df,my_col
+  # Returns:
+  #      Returns a plot of the data
+  library(openair)
+  
+  # Get original plotting parameters - Can change after, required for multi-plotting
+  #olpdar <- par(no.readonly = TRUE)
+  Hs <- colnames(input_df)[1]
+  Tp <- colnames(input_df)[2]
+  Dp <- colnames(input_df)[3]
+  
+  t1 <- scatterPlot(input_df,x=Hs,y=Tp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)#,type="season")
+  t2 <- scatterPlot(input_df,x=Hs,y=Dp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)
+  t3<- scatterPlot(input_df,x=Tp,y=Dp,method = "hexbin",xbins=100,cols = "jet",aspect=1,hemisphere="southern")#,type="season")
+  scatterPlots <- list(t1,t2,t3)
+  return(scatterPlots)
+}

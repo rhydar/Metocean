@@ -173,18 +173,18 @@ combineData <- function(rootDir,timeFiles){
 
 #' Function to generate a pivot table of percentage occurances
 #'
-#' 
+#'
 #' @param df1 Combined data frame
-#' @param variables vecotr of named variables within data frame 
+#' @param variables vecotr of named variables within data frame
 #' @param bins vector of bins for each of the named variables
 #' @return pivot_table
-#' @export 
-#' @examples 
+#' @export
+#' @examples
 #' generatePivot(df1,variables,bins)
 generatePivot <- function(df1,variables,bins,...){
     # # Description ==============================================================
     # Author:     Rhydar Lee Harris
-    # Date:       2014-08-24 T21:25:13Z 
+    # Date:       2014-08-24 T21:25:13Z
     # Type:       METOCEAN ANALYSIS
     # Description:  Generates a pivot table of wave conditions from a given time
     #
@@ -199,25 +199,25 @@ generatePivot <- function(df1,variables,bins,...){
     tmp <- cut(df1[[variables[1]]],breaks = unlist(bins[1]))
     df_list <- c(paste(variables,"_bins",sep=""))
     assign(paste(df_list[1]),as.data.frame(tmp))
-    
+
     df1_binned <- cbind(df1,get(df_list[1]))
     colnames(df1_binned)[length(df1_binned)] <- df_list[1]
-    
+
     for (i in 2:length(variables)){
         tmp <- cut(df1[[variables[i]]],breaks = unlist(bins[i]))
         assign(paste(df_list[i]),as.data.frame(tmp))
-        
+
         df1_binned <- cbind(df1_binned,get(df_list[i]))
-        colnames(df1_binned)[length(df1_binned)] <- df_list[i] 
+        colnames(df1_binned)[length(df1_binned)] <- df_list[i]
     }
-    
+
     # Convert to matrix
     pivot_table <- dcast(df1_binned, as.formula(paste(df_list[1],"~",df_list[2])),margins=TRUE,fill = 0,drop = FALSE,)
-    
+
     rownames(pivot_table) <- pivot_table[,1]
     pivot_table <- pivot_table[c(-1)]
     if (grepl("NA",names(pivot_table),ignore.case = TRUE)){
-        pivot_table <- pivot_table[, -which(names(pivot_table) %in% c("NA"))] 
+        pivot_table <- pivot_table[, -which(names(pivot_table) %in% c("NA"))]
     }
     pivot_table <- 100*pivot_table/length(df1[,1])
 
@@ -226,17 +226,17 @@ generatePivot <- function(df1,variables,bins,...){
 
 #' Function to plot wave scatter plot
 #'
-#' 
+#'
 #' @param input_df
 #' @param col_index Index of required variables for scatter plot
 #' @return multiple scatter plot objects
-#' @export 
-#' @examples 
+#' @export
+#' @examples
 #' plotScatter(input_df,col_index)
 plotScatter <- function(input_df,col_index = c(2,3,4),...){
   # # Description ==============================================================
   # Author:      Rhydar Lee Harris
-  # Date:        2015-03-28 T20:38:24Z 
+  # Date:        2015-03-28 T20:38:24Z
   # Type:        Wave hexbin - Check for DF and Zoo
   # Description:  Generates a hexbin scatter plot matrix
   # ============================================================================
@@ -245,13 +245,13 @@ plotScatter <- function(input_df,col_index = c(2,3,4),...){
   # Returns:
   #      Returns a plot of the data
   library(openair)
-  
+
   # Get original plotting parameters - Can change after, required for multi-plotting
   #olpdar <- par(no.readonly = TRUE)
-  Hs <- colnames(input_df)[1]
-  Tp <- colnames(input_df)[2]
-  Dp <- colnames(input_df)[3]
-  
+  Hs <- colnames(input_df)[col_index[1]]
+  Tp <- colnames(input_df)[col_index[2]]
+  Dp <- colnames(input_df)[col_index[3]]
+
   t1 <- scatterPlot(input_df,x=Hs,y=Tp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)#,type="season")
   t2 <- scatterPlot(input_df,x=Hs,y=Dp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)
   t3<- scatterPlot(input_df,x=Tp,y=Dp,method = "hexbin",xbins=100,cols = "jet",aspect=1,hemisphere="southern")#,type="season")

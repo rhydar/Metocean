@@ -4,7 +4,7 @@
 \alias{plotScatter}
 \title{Function to plot wave scatter plot}
 \usage{
-plotScatter(input_df, col_index = c(2, 3, 4), ...)
+plotScatter(input_df, col_index = c(2, 3, 4), labels, ...)
 }
 \arguments{
 \item{input_df}{}

@@ -124,13 +124,13 @@ getExceedance <- function(df,variable,
 
 #' Function to plot wind and wave rose plots
 #'
-#' 
+#'
 #' @param df time series of metocean data
 #' @param hs magnitude variable
 #' @param dm direction variable
-#' @param bins number of bins in the 
-#' @export 
-#' @examples 
+#' @param bins number of bins in the
+#' @export
+#' @examples
 #' plotRose()
 plotRose <- function(df,hs,wd,bins){
     library(openair)
@@ -140,14 +140,14 @@ plotRose <- function(df,hs,wd,bins){
 
 #' Function to join time series of files into a single file
 #'
-#' 
+#'
 #' @param timeFiles vector of strings giving the file names
 #' @param rootDir string of the root directory of all the files
 #' @return df dataframe with date and variables
-#' @export 
-#' @examples 
-#' combineData(timeFiles,rootDir)
-combineData <- function(timefiles,rootDir){
+#' @export
+#' @examples
+#' combineData(rootDir,timeFiles)
+combineData <- function(rootDir,timeFiles){
   readWaveParameter <- function(file,parameter){
     # Funciton to read individual wave parameters into a time series
     myParamData <- read.table(file = file,header = FALSE,sep="\t",
@@ -167,6 +167,6 @@ combineData <- function(timefiles,rootDir){
   # Combine all files together.
   df <- testHs
   df$Tp <- testTp$Tp
-  df$Dp <- testDp$Dp   
+  df$Dp <- testDp$Dp
   return(df)
 }

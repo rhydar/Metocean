@@ -4,7 +4,7 @@
 \alias{combineData}
 \title{Function to join time series of files into a single file}
 \usage{
-combineData(timefiles, rootDir)
+combineData(rootDir, timeFiles)
 }
 \arguments{
 \item{rootDir}{string of the root directory of all the files}
@@ -18,6 +18,6 @@ df dataframe with date and variables
 Function to join time series of files into a single file
 }
 \examples{
-combineData(timeFiles,rootDir)
+combineData(rootDir,timeFiles)
 }
 

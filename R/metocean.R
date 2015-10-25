@@ -256,7 +256,8 @@ plotScatter <- function(input_df,col_index = c(2,3,4),labels,...){
   t2 <- scatterPlot(input_df,x=Hs,y=Dp,method = "hexbin",xbins=100,hemisphere="southern",cols = "jet",aspect=1)
   t3 <- scatterPlot(input_df,x=Tp,y=Dp,method = "hexbin",xbins=100,cols = "jet",aspect=1,hemisphere="southern")#,type="season")
 
-  t1$plot$xlab <- list(label = labels[1],cex = 0.6,scales=list(tck=c(1,0), x=list(cex=1.2), y=list(cex=1.5)))
+  t1$plot$xlab <- list(label = labels[1],cex = 0.6,scales=list(cex=0.2))
+  tt1$plot$x.scales = list(cex=0.2)
   t1$plot$ylab <- list(label = labels[2],cex = 0.6,scales=list(cex=0.2))
 
   t2$plot$xlab <- list(label = labels[1],cex = 0.6,scales=list(cex=0.2))

@@ -51,7 +51,7 @@ readMikeDFS0 <- function(data_file){
 #' @export
 #' @examples
 #' getExceedance()
-  getExceedance <- function(df,variable,
+getExceedance <- function(df,variable,
    	percentiles = c(c(0,0.01,0.02,0.05),seq(0.1,0.9,0.1),c(0.95,0.98,0.99,1)),
    	xlabel, type = "annual", hemisphere = "northern", output_type = "plot"){
   	library(lubridate)
@@ -119,7 +119,7 @@ readMikeDFS0 <- function(data_file){
     if (output_type == "table"){
       tabulateSeasonalECDF(df)
       }
-  }
+}
 
 
 #' Function to plot wind and wave rose plots
@@ -136,4 +136,37 @@ plotRose <- function(df,hs,wd,bins){
     library(openair)
     windRose()
     return(plotObj)
+}
+
+#' Function to join time series of files into a single file
+#'
+#' 
+#' @param timeFiles vector of strings giving the file names
+#' @param rootDir string of the root directory of all the files
+#' @return df dataframe with date and variables
+#' @export 
+#' @examples 
+#' combineData(timeFiles,rootDir)
+combineData <- function(timefiles,rootDir){
+  readWaveParameter <- function(file,parameter){
+    # Funciton to read individual wave parameters into a time series
+    myParamData <- read.table(file = file,header = FALSE,sep="\t",
+                              col.names=c("date",parameter))
+    myParamData <- myParamData[unique(myParamData[,1]),]
+    myParamData$date <- as.POSIXct(myParamData$date)
+    #myParamData <- xts(myParamData[[parameter]],myParamData$dat)
+    return(myParamData)
   }
+  hs_file <- paste(rootDir,timeFiles[1],sep="")
+  tp_file <- paste(rootDir,timeFiles[2],sep="")
+  dp_file <- paste(rootDir,timeFiles[3],sep="")
+  testHs <- readWaveParameter(hs_file,"Hs")
+  testTp <- readWaveParameter(tp_file,"Tp")
+  testDp <- readWaveParameter(dp_file,"Dp")
+
+  # Combine all files together.
+  df <- testHs
+  df$Tp <- testTp$Tp
+  df$Dp <- testDp$Dp   
+  return(df)
+}

@@ -293,19 +293,22 @@ plotWaveParams <- function(nww3Param){
 
         if (bottom == FALSE){
             xlab = ""
-            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.1, cex.axis = 1.5,cex.lab=1.5)
+            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.1, cex.axis = 1.3,cex.lab=1.3)
         }
         else {
             xlab = ""
-            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.1, cex.axis = 1.5,cex.lab=1.5)
+            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.1, cex.axis = 1.3,cex.lab=1.3)
         }
     }
     op <- par(no.readonly = TRUE)
     # Set 3 by 1 plot
+    hm0lab <- expression(paste("H"[m0]," [m]"))
+    tplab <- expression(paste("T"[p]," [s]"))
+    dplab <- expression(paste("Wave direction TN [deg]"))
     layout(matrix(c(1,2,3), 3, 1, byrow = TRUE))
-    plotWaveParam(nww3Param$date,nww3Param$Hs,myylab = "Hm0 [m]",xaxt="n")
-    plotWaveParam(nww3Param$date,nww3Param$Tp, myylab = "Tp [s]",xaxt="n")
-    plotWaveParam(nww3Param$date,nww3Param$Dp, myylab = "Wave direction [deg TN]",bottom="TRUE")
+    plotWaveParam(nww3Param$date,nww3Param$Hs,myylab = hm0lab,xaxt="n")
+    plotWaveParam(nww3Param$date,nww3Param$Tp, myylab = tplab,xaxt="n")
+    plotWaveParam(nww3Param$date,nww3Param$Dp, myylab = dplab,bottom="TRUE")
     par(op)
 }
 

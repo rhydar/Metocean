@@ -287,7 +287,7 @@ plotWaveParams <- function(nww3Param){
         # Save current plot options
         # Convert to tz
         par(mar=c(2,5,1,1))#,oma=c(1,1,1,1))
-        plot(x,y,type="l",xaxt="n",yaxt="n",xlab = "", ylab = "",lwd=0.1, cex.ylab = 1.2)
+        plot(x,y,type="l",xaxt="n",yaxt="n",xlab = "", ylab = "",lwd=0.1, cex.axis = 1.2,cex.lab=1.2)
         grid(col="dark grey",lty=2)
         par(new=T)
 

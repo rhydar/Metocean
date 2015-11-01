@@ -212,7 +212,6 @@ generatePivot <- function(df1,variables,bins,...){
     }
 
     # Convert to matrix
-    pivot_table <- dcast(df1_binned, as.formula(paste(df_list[1],"~",df_list[2])),margins=TRUE,fill = 0,drop = FALSE,)
 
     rownames(pivot_table) <- pivot_table[,1]
     pivot_table <- pivot_table[c(-1)]
@@ -273,3 +272,41 @@ plotScatter <- function(input_df,col_index = c(2,3,4),labels,...){
   scatterPlots <- list(t1,t2,t3)
   return(scatterPlots)
 }
+
+#' Function to plot wave time series
+#'
+#'
+#' @param input_df
+#' @return Time series of Hmo, Tp, and Dp
+#' @export
+#' @examples
+#' plotScatter(input_df,col_index)
+plotWaveParams <- function(nww3Param){
+    plotWaveParam <- function(x,y,myylab,bottom="FALSE",...){
+        # Function to plot time series of wave data
+        # Save current plot options
+        # Convert to tz
+        par(mar=c(2,5,1,1))#,oma=c(1,1,1,1))
+        plot(x,y,type="l",xaxt="n",yaxt="n",xlab = "", ylab = "",lwd=0.1)
+        grid(col="dark grey",lty=2)
+        par(new=T)
+
+        if (bottom == FALSE){
+            xlab = ""
+            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.7)
+        }
+        else {
+            xlab = ""
+            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.7)
+        }
+    }
+    op <- par(no.readonly = TRUE)
+    # Set 3 by 1 plot
+    layout(matrix(c(1,2,3), 3, 1, byrow = TRUE))
+    plotWaveParam(nww3Param$date,nww3Param$Hs,myylab = "Hm0 [m]",xaxt="n")
+    plotWaveParam(nww3Param$date,nww3Param$Tp, myylab = "Tp [s]",xaxt="n")
+    plotWaveParam(nww3Param$date,nww3Param$Dp, myylab = "Wave direction [deg TN]",bottom="TRUE")
+    par(op)
+}
+
+

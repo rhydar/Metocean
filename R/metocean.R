@@ -293,11 +293,11 @@ plotWaveParams <- function(nww3Param){
 
         if (bottom == FALSE){
             xlab = ""
-            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.1, cex.axis = 5,cex.lab=5)
+            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.1, cex.axis = 1.5,cex.lab=1.5)
         }
         else {
             xlab = ""
-            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.1, cex.axis = 5,cex.lab=5)
+            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.1, cex.axis = 1.5,cex.lab=1.5)
         }
     }
     op <- par(no.readonly = TRUE)

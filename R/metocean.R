@@ -293,17 +293,17 @@ plotWaveParams <- function(nww3Param){
 
         if (bottom == FALSE){
             xlab = ""
-            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.7)
+            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.1)
         }
         else {
             xlab = ""
-            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.7)
+            plot(x,y,type="l",xlab = xlab, ylab = myylab, col="blue",lwd=0.1)
         }
     }
     op <- par(no.readonly = TRUE)
     # Set 3 by 1 plot
     layout(matrix(c(1,2,3), 3, 1, byrow = TRUE))
-    plotWaveParam(nww3Param$date,nww3Param$Hs,myylab = "Hm0 [m]",xaxt="n")
+    plotWaveParam(nww3Param$date,nww3Param$Hs,myylab = "Hm0 [m]",xaxt="n",ylab.cex=1.2)
     plotWaveParam(nww3Param$date,nww3Param$Tp, myylab = "Tp [s]",xaxt="n")
     plotWaveParam(nww3Param$date,nww3Param$Dp, myylab = "Wave direction [deg TN]",bottom="TRUE")
     par(op)

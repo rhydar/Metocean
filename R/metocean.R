@@ -382,6 +382,9 @@ addTz <- function(df1,hsindex,tpindex){
     Hs <- df1[,hsindex]
     D <- 0.036-0.0056*Tp/sqrt(Hs);
     wavegamma <- exp(3.484*(1-0.1975*D*Tp^4/(Hs^2)))
+    if(wavegamma > 10){
+        wavegamma = 3.3
+    }
     Tz <- Tp/(1.30301-0.01698*wavegamma+0.12102/wavegamma)
     return(cbind(df1,Tz,wavegamma))
 }

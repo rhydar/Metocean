@@ -372,13 +372,19 @@ generatePivot <- function(df1,variables,bins,...){
 #'
 #'
 #' @param input_df
-#' @param variables = atomic vector of input variable names for pivot table
-#' @param bins = atomic vector of bins for each of the variables
+#' @param hsindex - index of Hs
+#' @param tpindex - index of Tp
 #' @export
 #' @examples
-#' generatePivot(df,c("Hm0","Tp"),bins = c())
-addTz <- function(df1,gamma,tpindex){
+#' addTz()
+addTz <- function(df1,hsindex,tpindex){
     Tp <- df1[,tpindex]
-    Tz <- Tp/(1.30301-0.01698*gamma+0.12102/gamma)
-    return(cbind(df1,Tz))
+    Hs <- df1[,hsindex]
+    D <- 0.036-0.0056*Tp/sqrt(Hs);
+    wavegamma <- exp(3.484*(1-0.1975*D*Tp^4/(Hs^2)))
+    Tz <- Tp/(1.30301-0.01698*wavegamma+0.12102/wavegamma)
+    return(cbind(df1,Tz,wavegamma))
 }
+
+
+

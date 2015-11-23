@@ -378,7 +378,6 @@ generatePivot <- function(df1,variables,bins,...){
     colnames(pivot_table) <- as.character(unlist(bins[2])[2:length(unlist(bins[2]))])
     return(pivot_table)
 }
-
 #' Function to calculate Tz from wave parameter data
 #'
 #'

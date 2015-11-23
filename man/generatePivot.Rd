@@ -4,18 +4,18 @@
 \alias{generatePivot}
 \title{Function to generate a pivot table of percentage occurances}
 \usage{
-generatePivot(df1, variables, bins, ...)
+generatePivot(df1, variables, target, bins, ...)
 
-generatePivot(df1, variables, bins, ...)
+generatePivot(df1, variables, target, bins, ...)
 }
 \arguments{
 \item{df1}{Combined data frame}
 
 \item{variables}{vecotr of named variables within data frame}
 
-\item{bins}{vector of bins for each of the named variables}
-
 \item{target}{the value variable}
+
+\item{bins}{vector of bins for each of the named variables}
 
 \item{input_df}{}
 

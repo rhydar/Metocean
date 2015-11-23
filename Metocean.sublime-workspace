@@ -275,16 +275,16 @@
 			"file": "R/metocean.R",
 			"settings":
 			{
-				"buffer_size": 10083,
+				"buffer_size": 13373,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/rhydarharris/Dropbox/DVRS_Meeting.todo",
+			"file": "/Users/rhydarharris/Dropbox/Scripts/Python/DVRS/blender_extract_vertices.py",
 			"settings":
 			{
-				"buffer_size": 2286,
-				"line_ending": "Unix"
+				"buffer_size": 1294,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -473,6 +473,7 @@
 	],
 	"file_history":
 	[
+		"/Users/rhydarharris/Dropbox/DVRS_Meeting.todo",
 		"/Users/rhydarharris/Desktop/test.R",
 		"/Users/rhydarharris/Desktop/Saldanha/Metocean.Rmd",
 		"/Users/rhydarharris/Dropbox/Scripts/R/RPackages/Metocean/R/processNCEP.r",
@@ -599,8 +600,7 @@
 		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/Forces.Rnw",
 		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/MooringDesignApproach.Rnw",
 		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/Introduction.Rnw",
-		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/MooringRestraint.Rnw",
-		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/MooringBulk.Rnw"
+		"/Volumes/PRDW_RLH01/Position Papers (948) Vessel Motions Capability Development/Working/Engineers/RLH/Technical Specifications/z_PRDW_Practice___Guidelines/MooringRestraint.Rnw"
 	],
 	"find":
 	{
@@ -685,15 +685,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10083,
+						"buffer_size": 13373,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8274,
-								8274
+								0,
+								0
 							]
 						],
 						"settings":
@@ -704,7 +704,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3642.0,
+						"translation.y": 2034.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -712,27 +712,29 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/rhydarharris/Dropbox/DVRS_Meeting.todo",
+					"file": "/Users/rhydarharris/Dropbox/Scripts/Python/DVRS/blender_extract_vertices.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2286,
+						"buffer_size": 1294,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2281,
-								2281
+								439,
+								439
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PlainTasks/PlainTasks.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 242.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -751,8 +753,8 @@
 						"selection":
 						[
 							[
-								7255,
-								6161
+								1801,
+								44
 							]
 						],
 						"settings":
@@ -763,7 +765,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2567.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,

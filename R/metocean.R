@@ -315,18 +315,18 @@ plotWaveParams <- function(nww3Param){
 
 #' Function to get a pivot table of Hm0 Tp occurances
 #'
-#' 
+#'
 #' @param input_df
 #' @param variables = atomic vector of input variable names for pivot table
 #' @param bins = atomic vector of bins for each of the variables
-#' @export 
+#' @export
 #' @examples
-#' generatePivot(df,c("Hm0","Tp"),bins = c()) 
+#' generatePivot(df,c("Hm0","Tp"),bins = c())
 
 generatePivot <- function(df1,variables,bins,...){
     # # Description ==============================================================
     # Author:     Rhydar Lee Harris
-    # Date:       2014-08-24 T21:25:13Z 
+    # Date:       2014-08-24 T21:25:13Z
     # Type:       METOCEAN ANALYSIS
     # Description:  Generates a pivot table of wave conditions from a given time
     #
@@ -336,34 +336,49 @@ generatePivot <- function(df1,variables,bins,...){
     # Returns:
     #     table.tex where table.tex is a latex table for inclusion into a report
     library(reshape2)
-    library(plyr)
+    #library(plyr)
     library(reshape2,dplyr)
     # Make first bin
     # wave_data_bins <- cbind(wave_data_complete,hs_bins = cut(wave_data_complete$Hm0,breaks = hs_bins))
     tmp <- cut(df1[[variables[1]]],breaks = unlist(bins[1]))
     df_list <- c(paste(variables,"_bins",sep=""))
     assign(paste(df_list[1]),as.data.frame(tmp))
-    
+
     df1_binned <- cbind(df1,get(df_list[1]))
     colnames(df1_binned)[length(df1_binned)] <- df_list[1]
-    
+
     for (i in 2:length(variables)){
         tmp <- cut(df1[[variables[i]]],breaks = unlist(bins[i]))
         assign(paste(df_list[i]),as.data.frame(tmp))
-        
+
         df1_binned <- cbind(df1_binned,get(df_list[i]))
-        colnames(df1_binned)[length(df1_binned)] <- df_list[i] 
+        colnames(df1_binned)[length(df1_binned)] <- df_list[i]
     }
-    
+
     # Convert to matrix
     pivot_table <- dcast(df1_binned, as.formula(paste(df_list[1],"~",df_list[2])),margins=TRUE,fill = 0,drop = FALSE,)
-    
+
     rownames(pivot_table) <- pivot_table[,1]
     pivot_table <- pivot_table[c(-1)]
     if (grepl("NA",names(pivot_table),ignore.case = TRUE)){
-        pivot_table <- pivot_table[, -which(names(pivot_table) %in% c("NA"))] 
+        pivot_table <- pivot_table[, -which(names(pivot_table) %in% c("NA"))]
     }
     pivot_table <- 100*pivot_table/length(df1[,1])
 
     return(pivot_table)
+}
+
+#' Function to calculate Tz from wave parameter data
+#'
+#'
+#' @param input_df
+#' @param variables = atomic vector of input variable names for pivot table
+#' @param bins = atomic vector of bins for each of the variables
+#' @export
+#' @examples
+#' generatePivot(df,c("Hm0","Tp"),bins = c())
+addTz <- function(df1,gamma,tpindex){
+    Tp <- df1[,tpindex]
+    Tz <- Tp/(1.30301-0.01698*gamma+0.12102/gamma)
+    return(cbind(df1,Tz))
 }

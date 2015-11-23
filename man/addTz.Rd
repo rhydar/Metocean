@@ -4,19 +4,19 @@
 \alias{addTz}
 \title{Function to calculate Tz from wave parameter data}
 \usage{
-addTz(df1, gamma, tpindex)
+addTz(df1, hsindex, tpindex)
 }
 \arguments{
+\item{hsindex}{- index of Hs}
+
+\item{tpindex}{- index of Tp}
+
 \item{input_df}{}
-
-\item{variables}{= atomic vector of input variable names for pivot table}
-
-\item{bins}{= atomic vector of bins for each of the variables}
 }
 \description{
 Function to calculate Tz from wave parameter data
 }
 \examples{
-generatePivot(df,c("Hm0","Tp"),bins = c())
+addTz()
 }
 

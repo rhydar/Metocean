@@ -185,7 +185,7 @@ combineData <- function(rootDir,timeFiles){
 generatePivot <- function(df1,variables,target,bins,...){
     # # Description ==============================================================
     # Author:     Rhydar Lee Harris
-    # Date:       2014-08-24 T21:25:13Z
+    # Date:       2015-11-24 T21:25:13Z
     # Type:       METOCEAN ANALYSIS
     # Description:  Generates a pivot table of wave conditions from a given time
     #

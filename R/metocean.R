@@ -401,8 +401,8 @@ addTz <- function(df1,hsindex,tpindex){
     wave_gamma <- 3.3
     Tz <- Tp*(0.6673 + 0.05037*wave_gamma - 0.006230*wave_gamma^2 + 0.0003341*wave_gamma^3)
     Te <- 1.18 * Tz
-
-    return(cbind(df1,Tz,Te))
+    PowWave <- 0.49*((df1[,hsindex])^2)*Te
+    return(cbind(df1,Tz,Te,PowWave))
 }
 
 

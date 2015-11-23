@@ -331,7 +331,7 @@ plotWaveParams <- function(nww3Param){
 #' @examples
 #' generatePivot(df,c("Hm0","Tp"),bins = c())
 
-generatePivot <- function(df1,variables,bins,...){
+generatePivot <- function(df1,variables,target,bins,...){
     # # Description ==============================================================
     # Author:     Rhydar Lee Harris
     # Date:       2014-08-24 T21:25:13Z

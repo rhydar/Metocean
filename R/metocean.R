@@ -176,12 +176,13 @@ combineData <- function(rootDir,timeFiles){
 #'
 #' @param df1 Combined data frame
 #' @param variables vecotr of named variables within data frame
+#' @param target the value variable
 #' @param bins vector of bins for each of the named variables
 #' @return pivot_table
 #' @export
 #' @examples
 #' generatePivot(df1,variables,bins)
-generatePivot <- function(df1,variables,bins,...){
+generatePivot <- function(df1,variables,target,bins,...){
     # # Description ==============================================================
     # Author:     Rhydar Lee Harris
     # Date:       2014-08-24 T21:25:13Z
@@ -193,6 +194,8 @@ generatePivot <- function(df1,variables,bins,...){
     #   dataFile,variable,...
     # Returns:
     #     table.tex where table.tex is a latex table for inclusion into a report
+    library(reshape2)
+    library(plyr)
     library(reshape2,dplyr)
     # Make first bin
     # wave_data_bins <- cbind(wave_data_complete,hs_bins = cut(wave_data_complete$Hm0,breaks = hs_bins))
@@ -210,18 +213,23 @@ generatePivot <- function(df1,variables,bins,...){
         df1_binned <- cbind(df1_binned,get(df_list[i]))
         colnames(df1_binned)[length(df1_binned)] <- df_list[i]
     }
+    # Aggregate functions
+    mean_power <- function(x) {sum(x)/length(x)}
 
     # Convert to matrix
+    pivot_table <- dcast(df1_binned, as.formula(paste(df_list[1],"~",df_list[2])),
+                         fun.aggregate = function(x) mean_power(x),value.var = target,margins=FALSE,fill = 0,drop = FALSE)
 
     rownames(pivot_table) <- pivot_table[,1]
     pivot_table <- pivot_table[c(-1)]
-    if (grepl("NA",names(pivot_table),ignore.case = TRUE)){
-        pivot_table <- pivot_table[, -which(names(pivot_table) %in% c("NA"))]
-    }
-    pivot_table <- 100*pivot_table/length(df1[,1])
-
+    #if (grepl("NA",names(pivot_table),ignore.case = TRUE)){
+    #    pivot_table <- pivot_table[, -which(names(pivot_table) %in% c("NA"))]
+    #}
+    rownames(pivot_table) <- as.character(unlist(bins[1])[2:length(unlist(bins[1]))])
+    colnames(pivot_table) <- as.character(unlist(bins[2])[2:length(unlist(bins[2]))])
     return(pivot_table)
 }
+
 
 #' Function to plot wave scatter plot
 #'

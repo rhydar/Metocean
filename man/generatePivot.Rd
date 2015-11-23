@@ -15,6 +15,8 @@ generatePivot(df1, variables, bins, ...)
 
 \item{bins}{vector of bins for each of the named variables}
 
+\item{target}{the value variable}
+
 \item{input_df}{}
 
 \item{variables}{= atomic vector of input variable names for pivot table}

@@ -32,7 +32,7 @@ Function to generate a pivot table of percentage occurances
 Function to get a pivot table of Hm0 Tp occurances
 }
 \examples{
-generatePivot(df1,variables,bins)
+generatePivot(df1,variables,target,bins)
 generatePivot(df,c("Hm0","Tp"),bins = c())
 }
 

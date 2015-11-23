@@ -181,7 +181,7 @@ combineData <- function(rootDir,timeFiles){
 #' @return pivot_table
 #' @export
 #' @examples
-#' generatePivot(df1,variables,bins)
+#' generatePivot(df1,variables,target,bins)
 generatePivot <- function(df1,variables,target,bins,...){
     # # Description ==============================================================
     # Author:     Rhydar Lee Harris

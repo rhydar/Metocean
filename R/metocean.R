@@ -356,7 +356,7 @@ generatePivot <- function(df1,variables,bins,...){
     }
 
     # Convert to matrix
-    pivot_table <- dcast(df1_binned, as.formula(paste(df_list[1],"~",df_list[2])),margins=TRUE,fill = 0,drop = FALSE,)
+    pivot_table <- dcast(df1_binned, as.formula(paste(df_list[1],"~",df_list[2])),margins=TRUE,fill = 0,drop = FALSE)
 
     rownames(pivot_table) <- pivot_table[,1]
     pivot_table <- pivot_table[c(-1)]
@@ -380,14 +380,25 @@ generatePivot <- function(df1,variables,bins,...){
 addTz <- function(df1,hsindex,tpindex){
     Tp <- df1[,tpindex]
     Hs <- df1[,hsindex]
-    D <- 0.036-0.0056*Tp/sqrt(Hs);
-    wavegamma <- exp(3.484*(1-0.1975*D*Tp^4/(Hs^2)))
-    if(wavegamma > 10){
-        wavegamma = 3.3
-    }
-    wavegamma <- 3.3
-    Tz <- Tp/(1.30301-0.01698*wavegamma+0.12102/wavegamma)
-    return(cbind(df1,Tz,wavegamma))
+
+    wave_gamma <- 3.3
+
+    df1 <- cbind(df1,wave_gamma)
+    ratioHsTp <- Tp/sqrt(Hs)
+    df1 <- cbind(df1,ratioHsTp)
+
+    # Ratio Hs Tp < 3.6
+    # DNV-RP-H103
+    df1$wave_gamma[which(df1$ratioHsTp <= 3.6)] <- 5
+
+    df1$wave_gamma[which(df1$ratioHsTp > 3.6 & df1$ratioHsTp < 5)] <-
+        exp(5.75 - 1.15*df1$ratioHsTp[which(df1$ratioHsTp > 3.6 & df1$ratioHsTp < 5)])
+
+    df1$wave_gamma[which(df1$ratioHsTp >= 5)] <- 1
+
+    Tz <- Tp*(0.6673 + 0.05037*wave_gamma - 0.006230*wave_gamma^2 + 0.0003341*wave_gamma^3)
+
+    return(cbind(df1,Tz))
 }
 
 

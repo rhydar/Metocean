@@ -761,3 +761,31 @@ waveRose <- function (mydata, ws = "ws", wd = "wd", ws2 = NA, wd2 = NA, ws.int =
 }
 
 
+#' Function from openair to plot a wave rose from a time series
+#'
+#' @param input_df_time_series
+#' @export
+#' @examples
+#' plotSeasonalRose()
+plotSeasonalRose <- function(nww3Param){
+    require(openair)
+    #oldNames <- names(nww3Param)
+    #colnames(nww3Param) <- names
+    waveRose(mydata = nww3Param,
+             ws = "Hs",
+             wd = "Dp",
+             angle = 10,
+             type = "season",
+             hemisphere="southern",
+             auto.text = FALSE,
+             breaks = c(seq(0.2,2.2,0.2)),
+             key.header = expression(paste('H'[m0],' [m]')),
+             annotate = TRUE,
+             key.position = "right",
+             key.footer = "",
+
+             paddle = FALSE,
+             par.settings=list(fontsize=list(text=12),mar=c(0,0,0,0)),
+             main="Seasonal rose plot of the significant wave height at the PLEM"
+    )
+}

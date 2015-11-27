@@ -362,7 +362,7 @@ generatePivot <- function(df1,variables,target,bins,...){
         colnames(df1_binned)[length(df1_binned)] <- df_list[i]
     }
     # Aggregate functions
-    mean_power <- function(x) {sum(x)/length(x)}
+    mean_power <- function(x) {length(x)}
 
     # Convert to matrix
     pivot_table <- dcast(df1_binned, as.formula(paste(df_list[1],"~",df_list[2])),

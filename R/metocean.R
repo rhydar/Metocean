@@ -387,7 +387,7 @@ generatePivot <- function(df1,variables,target,bins,...){
 #' @param tpindex - index of Tp
 #' @export
 #' @examples
-#' addTz()
+#' addTz(df1,hsindex,tpindex)
 addTz <- function(df1,hsindex,tpindex){
     Tp <- df1[,tpindex]
     Hs <- df1[,hsindex]

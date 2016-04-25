@@ -17,6 +17,6 @@ addTz(df1, hsindex, tpindex)
 Function to calculate Tz from wave parameter data
 }
 \examples{
-addTz()
+addTz(df1,hsindex,tpindex)
 }
 

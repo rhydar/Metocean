@@ -814,7 +814,7 @@ readMikeAsciiDVRS <- function(data_file){
     # Define column names from line 2 in the MIKE format file
     col_names <- strsplit((readLines(con,n = 2)[2]),"  ")
     col_names <- as.vector(col_names[[1]])
-    colnames(data_frame) <- col_names[2:length(col_names)]
+    colnames(data_frame) <- col_names[3:length(col_names)]
     colnames(data_frame)[1] <- "date"
     colnames(data_frame) <- gsub(pattern = "\\s+", replacement = "_", x = colnames(data_frame), perl=TRUE)
 
@@ -828,7 +828,19 @@ readMikeAsciiDVRS <- function(data_file){
     return(data_frame)
 }
 
-
+#'  Function to convert Mike extract to Ascii DVRS file to a standard format
+#'
+#'  @param time series file
+#'  @export
+#'  @examples
+#'  convertDVRSAsciiToMikeAscii(df1)
+convertDVRSAsciiToMikeAscii <- function(df1){
+    library(lubridate)
+    df1$Time <- round(df1$Time*4)/4
+    df1$date <- ymd(paste(year(df1$date),month(df1$date),day(df1$date),sep="-")) + seconds_to_period(df1$Time)
+    df1$Time <- NULL
+    return(df1)
+}
 
 
 

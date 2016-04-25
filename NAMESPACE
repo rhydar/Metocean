@@ -2,6 +2,7 @@
 
 export(addTz)
 export(combineData)
+export(convertDVRSAsciiToMikeAscii)
 export(generatePivot)
 export(getExceedance)
 export(plotRose)

@@ -789,3 +789,71 @@ plotSeasonalRose <- function(nww3Param){
              main="Seasonal rose plot of the significant wave height at the PLEM"
     )
 }
+
+
+#' Function to read Mike by DHI automatically generated time series
+#'
+#' @param time series file
+#' @export
+#' @examples
+#' readMikeAscii(data_file)
+readMikeAsciiDVRS <- function(data_file){
+    library(zoo)
+    library(lubridate)
+    ## TODO: Direct dfs0 connector for R.Net - Need to include long - lat in output
+    # Open file as a connector for readlines
+    con <- file(data_file)
+
+    # Define data frame from variables data
+    data_frame <- read.table(data_file,header=FALSE,sep="",skip=2,stringsAsFactors = FALSE,na.strings=c("-1E-30"))
+    data_frame$V3 <- round(data_frame$V3*4)/4
+    data_frame$V2 <- NULL
+    data_frame$V1 <- ymd(data_frame$V1) + seconds_to_period(data_frame$V3)
+    data_frame$V3 <- NULL
+
+    # Define column names from line 2 in the MIKE format file
+    col_names <- strsplit((readLines(con,n = 2)[2]),"  ")
+    col_names <- as.vector(col_names[[1]])
+    colnames(data_frame) <- col_names[2:length(col_names)]
+    colnames(data_frame)[1] <- "date"
+    colnames(data_frame) <- gsub(pattern = "\\s+", replacement = "_", x = colnames(data_frame), perl=TRUE)
+
+    # Close connection
+    close(con)
+
+    # Convert to zoo object
+    #data_frame <- zoo(data_frame[seq(2,length(data_frame),1)],
+    #  order.by = data_frame[[1]])
+
+    return(data_frame)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

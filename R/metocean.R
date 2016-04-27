@@ -810,8 +810,7 @@ readMikeAsciiDVRS <- function(data_file,column_names = NULL){
     data_frame$V2 <- NULL
     options(digits.secs=6)
     data_frame$V1 <- as.POSIXct(strptime("1970-01-01 00:00:00.000", "%Y-%m-%d %H:%M:%OS")) + data_frame$V3
-      
-    #data_frame$V3 <- NULL
+    data_frame$V3 <- NULL
 
     if (is.null(column_names)){
         # Define column names from line 2 in the MIKE format file

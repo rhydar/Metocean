@@ -797,7 +797,7 @@ plotSeasonalRose <- function(nww3Param){
 #' @export
 #' @examples
 #' readMikeAscii(data_file)
-readMikeAsciiDVRS <- function(data_file){
+readMikeAsciiDVRS <- function(data_file,column_names = NULL){
     library(zoo)
     library(lubridate)
     ## TODO: Direct dfs0 connector for R.Net - Need to include long - lat in output
@@ -811,13 +811,17 @@ readMikeAsciiDVRS <- function(data_file){
     data_frame$V1 <- ymd(data_frame$V1) + seconds_to_period(data_frame$V3)
     data_frame$V3 <- NULL
 
-    # Define column names from line 2 in the MIKE format file
-    col_names <- strsplit((readLines(con,n = 2)[2]),"  ")
-    col_names <- as.vector(col_names[[1]])
-    colnames(data_frame) <- col_names[3:length(col_names)]
-    colnames(data_frame)[1] <- "date"
-    colnames(data_frame) <- gsub(pattern = "\\s+", replacement = "_", x = colnames(data_frame), perl=TRUE)
-
+    if (is.null(column_names)){
+        # Define column names from line 2 in the MIKE format file
+        col_names <- strsplit((readLines(con,n = 2)[2]),"  ")
+        col_names <- as.vector(col_names[[1]])
+        colnames(data_frame) <- col_names[3:length(col_names)]
+        colnames(data_frame)[1] <- "date"
+        colnames(data_frame) <- gsub(pattern = "\\s+", replacement = "_", x = colnames(data_frame), perl=TRUE)
+    }
+    else {
+        print (column_names)
+    }
     # Close connection
     close(con)
 

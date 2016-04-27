@@ -808,8 +808,10 @@ readMikeAsciiDVRS <- function(data_file,column_names = NULL){
     data_frame <- read.table(data_file,header=FALSE,sep="",skip=2,stringsAsFactors = FALSE,na.strings=c("-1E-30"))
     data_frame$V3 <- round(data_frame$V3*4)/4
     data_frame$V2 <- NULL
-    data_frame$V1 <- ymd(data_frame$V1) + seconds_to_period(data_frame$V3)
-    data_frame$V3 <- NULL
+    options(digits.secs=6)
+    data_frame$V1 <- as.POSIXct(strptime("1970-01-01 00:00:00.000", "%Y-%m-%d %H:%M:%OS")) + data_frame$V3
+      
+    #data_frame$V3 <- NULL
 
     if (is.null(column_names)){
         # Define column names from line 2 in the MIKE format file
@@ -820,7 +822,8 @@ readMikeAsciiDVRS <- function(data_file,column_names = NULL){
         colnames(data_frame) <- gsub(pattern = "\\s+", replacement = "_", x = colnames(data_frame), perl=TRUE)
     }
     else {
-        print (column_names)
+        colnames(data_frame)[1] <- "date"
+        colnames(data_frame) <- c("date",column_names)
     }
     # Close connection
     close(con)
